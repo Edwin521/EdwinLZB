@@ -8,6 +8,5 @@ sname = "阿泰";
 sname = "飞哥";
 
 
-const password="4936512"
-
-
+const password = "4936512"
+function

@@ -6,6 +6,9 @@ alert(sname);
 sname = "王胖子";
 alert(sname);
 sname = "阿泰";
+alert(sname);
+sname = "啊平";
+alert(sname);
 
 
 //设置一个常量password，保存你的密码

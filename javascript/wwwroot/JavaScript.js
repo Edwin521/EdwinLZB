@@ -1,14 +1,15 @@
 ﻿alert("if you think you can .then you can.");
 
-//用一个变量替换“编程”，以便输出更多内容。比如：助你实现{职业}梦想、助你实现{人生}梦想 
-var sname;
-sname = "李智博";
+//声明一个变量sname，表示同学的姓名；通过更改变量值，弹出至少3个同学的姓名 
+var sname = "李智博";
+alert(sname);
 sname = "王胖子";
+alert(sname);
 sname = "阿泰";
-sname = "飞哥";
+
 
 //设置一个常量password，保存你的密码
-const password = "4936512"
+const password = "4936512";
 
 //设计一段代码，实现以下逻辑
 //某用户有一定数量的帮帮豆（sum）
@@ -18,11 +19,40 @@ const password = "4936512"
 
 
 
-var sum = x;
-consume = y;
-banlance = (x - y);
+//var sum = x;
+//consume = y;
+//count = z;
+//banlance = x -(y*z);
+//if (banlance > 0) {
+//    console.log(true);
+//} else {
+//    console.log(false);
+//}
+
+var sum = 100,
+    consume = 10,
+    count = 2,
+    banlance = sum - (consume * count),
+    isAvailable;
+//sum = x;
+//consume = y;
+//count = z;
+//banlance = x-(y*z);
 if (banlance > 0) {
-    console.log(true);
+    isAvailable = true
+    console.log(isAvailable);
 } else {
-    console.log(false);
+    isAvailable = false
+    console.log(isAvailable);
 }
+//观察“一起帮”的求助，定义一个problem对象，其中包含title、body、reward、needRemote等属性
+
+var problem = {
+    title: "我的JavaScript实例",
+    body: "源栈真好，飞哥真牛逼。",
+    reward: "奖励你一个帮帮币",
+    needRemont:"需要远程协助",
+
+
+}
+

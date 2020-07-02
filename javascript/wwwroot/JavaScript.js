@@ -54,12 +54,12 @@ var problem = {
     title: "我的JavaScript实例",
     body: "源栈真好，飞哥真牛逼。",
     reward: "奖励你一个帮帮币",
-    needRemont:"需要远程协助",
+    needRemont: "需要远程协助",
 
 
 }//利用循环，计算出100以内奇数的和。
 
-ar i = 1, sum = 0;
+var i = 1, sum = 0;
 do {
     console.log(i);
     sum = i + sum;
@@ -74,5 +74,37 @@ do {
     console.log(i);
     sum = i + sum;
     i = i + 2;
-} while (i<=100);
+} while (i <= 100);
 console.log(sum);
+
+
+
+//用js判断一个数是不是质数
+function isPrimeNum(num) {
+    for (var i = 2; i < num / 2 + 1; i++) {
+        if (num % i == 0) {
+            console.log(false);
+        }
+    }
+}
+console.log(true);
+
+//用switch...case将代号转化成文字
+var code = 3;
+switch (code) {
+    case 0:
+        console.log("访客");
+        break;
+    case 1:
+        console.log("注册用户");
+        break;
+    case 2:
+        console.log("管理者");
+        break;
+    case 3:
+        console.log("超级管理者");
+        break;
+    default:
+        console.log("出错啦！");
+        break;
+}

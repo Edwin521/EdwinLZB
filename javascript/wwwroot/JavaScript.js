@@ -57,5 +57,22 @@ var problem = {
     needRemont:"需要远程协助",
 
 
-}
+}//利用循环，计算出100以内奇数的和。
 
+ar i = 1, sum = 0;
+do {
+    console.log(i);
+    sum = i + sum;
+    i = i + 2
+} while (i <= 100);
+console.log(sum);
+
+///利用循环，计算出100以内偶数的和。
+
+var i = 0, sum = 0;
+do {
+    console.log(i);
+    sum = i + sum;
+    i = i + 2;
+} while (i<=100);
+console.log(sum);

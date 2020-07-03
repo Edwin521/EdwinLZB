@@ -108,3 +108,42 @@ switch (code) {
         console.log("出错啦！");
         break;
 }
+
+//写一段代码，能根据一起帮用户的帮帮点（bCredit）输出他对应的等级
+var bCredit=0;
+
+switch (bCredit) {
+    case 30:
+        console.log('入门');
+        break;
+    case 100:
+        console.log('聚气');
+        break;
+    case 200:
+        console.log('凝水');
+        break;
+    case 700:
+        console.log('萌芽');
+        break;
+    case 1500:
+        console.log('单叶');
+        break; 
+    case 3000:
+        console.log('双叶');
+        break;
+    case 5000:
+        console.log('蓓蕾');
+        break;
+    case 10000:
+        console.log('花开');
+        break;
+    case 20000:
+        console.log('宝宝');
+        break;
+    case 50000:
+        console.log('金童/玉女');
+        break;
+    default:
+        console.log('输入有误');
+        break;
+}

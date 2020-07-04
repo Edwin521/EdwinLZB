@@ -25,22 +25,19 @@
 //    consume = 10,
 //    count = 2,
 //    banlance = sum - (consume * count),
-//    isAvailable;
+//    isAvailable = banlance > 0;
+//console.log(isAvailable);
 
-//if (banlance > 0) {
-//    isAvailable = true
-//    console.log(isAvailable);
-//} else {
-//    isAvailable = false
-//    console.log(isAvailable);
-//}
+
+
+
 //观察“一起帮”的求助，定义一个problem对象，其中包含title、body、reward、needRemote等属性
 
 //var problem = {
 //    title: "我的JavaScript实例",
 //    body: "源栈真好，飞哥真牛逼。",
-//    reward: "奖励你一个帮帮币",
-//    needRemont: "需要远程协助",
+//    reward: "11",
+//    needRemont: "true",
 
 
 //利用循环，计算出100以内奇数的和。
@@ -66,14 +63,17 @@
 
 
 ////用js判断一个数是不是质数
-//function isPrimeNum(num) {
+
+//var num = 77;
 //    for (var i = 2; i < num / 2 + 1; i++) {
 //        if (num % i == 0) {
 //            console.log(false);
+//      break;
 //        }
-//    }
-//}
-//console.log(true);
+//     }
+
+
+
 
 ////用switch...case将代号转化成文字
 //var code = 3;
@@ -85,10 +85,9 @@
 //        console.log("注册用户");
 //        break;
 //    case 2:
-//        console.log("管理者");
-//        break;
+//        
 //    case 3:
-//        console.log("超级管理者");
+//        console.log("s管理者");
 //        break;
 //    default:
 //        console.log("出错啦！");
@@ -96,48 +95,150 @@
 //}
 
 ////写一段代码，能根据一起帮用户的帮帮点（bCredit）输出他对应的等级
-//var bCredit=0;
+//var bCredit = 0;
+//bCredit >= 0;
+//if (bCredit > 30) {
+//    console.log('入门');
+//} else if (bCredit > 100) {
+//    console.log('聚气');
+//} else if (bCredit > 200) {
+//    console.log('凝水');
 
-//switch (bCredit) {
-//    case 30:
-//        console.log('入门');
-//        break;
-//    case 100:
-//        console.log('聚气');
-//        break;
-//    case 200:
-//        console.log('凝水');
-//        break;
-//    case 700:
-//        console.log('萌芽');
-//        break;
-//    case 1500:
-//        console.log('单叶');
-//        break; 
-//    case 3000:
-//        console.log('双叶');
-//        break;
-//    case 5000:
-//        console.log('蓓蕾');
-//        break;
-//    case 10000:
-//        console.log('花开');
-//        break;
-//    case 20000:
-//        console.log('宝宝');
-//        break;
-//    case 50000:
-//        console.log('金童/玉女');
-//        break;
-//    default:
-//        console.log('输入有误');
-//        break;
 //}
 
 
+
 //将源栈同学姓名装入数组，再根据该数组输出所有同学，
+
 var students = ['阿博', '王胖子', '阿泰', '啊平'];
 for (var i in students) {
-    document.write(i + ':' + students[i] + '<br>');
-   
+    console.log(i + ':' + students[i] + '<br>');
+    
 }
+
+students.length;
+
+
+
+
+//实现冒泡排序法
+//var numbers = [1, 3, 45, 5, 7, 61, 5, 4, 32, 65, 81];
+//for (var i = 0; i < numbers.length; i++) {
+//    for (var j = 0; j < numbers.length - i; j++) {
+//        if (numbers[j] > numbers[j+1]) {
+//            var temp = numbers[j];
+//            numbers[j] = numbers[j + 1];
+//            numbers[j + 1] = temp;
+
+
+//        }
+//    }
+//}
+
+
+//var person = {
+//    name: ['Bob', 'Smith'],
+//    age: 32,
+//    gender: 'male',
+//    interests: ['music', 'skiing'],
+//    bio: function () {
+//        alert(this.name[0] + ' ' + this.name[1] + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+//    },
+//    greeting: function () {
+//        alert('Hi! I\'m ' + this.name[0] + '.');
+//    }
+//};
+
+
+//输入三角形的边长，判断这三角形能否构成三角形。
+//var a = 1;
+//var b = 2;
+//var c = 3;
+//if ((a + b > c) && (a + c > b) && (b + c > a)) {
+//    alert('是三角形');
+//} else {
+//    alert('不是三角形');
+//}
+
+
+//根据用户输入的月份输出季节
+//var month = prompt('');
+//switch (month) {
+//    case '3':
+//    case '4':
+//    case '5':
+//        alert('春季');
+//        break;
+//    case '6':
+//    case '7':
+//    case '8':
+//        alert('夏季');
+//        break;
+//    case '9':
+//    case '10':
+//    case '11':
+//        alert('秋季');
+//        break;
+//    case '12':
+//    case '1':
+//    case '2':
+//        alert('冬季');
+//        break;
+//    default:
+//        alert('0o0');
+//        break;
+//}
+//用户输入工资后，工资大于1000的部分收0.05%的税，计算输出税后工资
+//var num = prompt('请输入公资');
+//var s ;
+//if (num > 1000) {
+//    s = (num - 1000) * 0.05;
+//} else {
+//    s=0
+//}
+//var money = num - s;
+//alert('税后工资为：' + money);
+
+// 请编写程序完成个人所得税计算。个税免征额3500元（工资薪金所得适用）
+//级数 全月应纳税所得额全月 税率(%) 速算扣除数
+//1 不超过1, 500元 3 0
+//2 超过1, 500元至4, 500元的部分 10 105
+//3 超过4, 500元至9, 000元的部分 20 555
+//4 超过9, 000元至35, 000元的部分 25 1, 005
+//5 超过35, 000元至55, 000元的部分 30 2, 755
+//6 超过55, 000元至80, 000元的部分 35 5, 505
+//7 超过80, 000元的部分 45 13, 505
+//例如：某人某月工资减去社保个人缴纳金额和住房公积金个人缴纳金额后为5500元，
+//个税计算：(5500 - 3500) * 10 % -105=95元
+//计算个税和到手工资
+
+//var num = prompt('请输入工资：');
+//var s;//个人税费
+//var money;//到手工资
+//if (num > 3500) {
+//    var m1 = num - 3500;//应该缴税的工资部分
+//    if (m1 > 80000) {
+//        s = m1 * 0.45 - 13505;
+//    } else if (m1 > 55000) {
+//        s = m1 * 0.35 - 5050;
+//    } else if (m1 > 35000) {
+//        s = m1 * 0.3 - 2755;
+//    } else if (m1 > 9000) {
+//        s = m1 * 0.25 - 1055;
+//    } else if (m1 > 4500) {
+//        s = m1 * m1 * 0.2 - 555;
+//    } else if (m1 > 1500) {
+//        s = m1 * 0.1 - 105;
+//    } else if (m1 > 0) {
+//        s = m1 * 0.03 - 30;
+//    } else {
+//        a = 0
+//    }
+
+//}
+//money = num - s;
+//alert('个税为；' + s);
+//alert('税后工资为' + money);
+
+
+/////

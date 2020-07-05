@@ -233,19 +233,19 @@
 /////
 
 //////声明一个数组odds，利用循环把100以内的奇数按从小到大的顺序存入其中 
-var odds= [];
-var j = 0;
-for (var i = 1; i < 100; i++) {
-    if (i % 2 !== 0) {
-        odds[j] = i;
-        j++;
-    }
-}
-console.log(odds);
+//var odds= [];
+//var j = 0;
+//for (var i = 1; i < 100; i++) {
+//    if (i % 2 !== 0) {
+//        odds[j] = i;
+//        j++;
+//    }
+//}
+//console.log(odds);
 ////计算从odds数组中所有元素的和
 //var sum = 0;
 
-//for (let i = 0; i < arr.length; i++) {
+//for (let i = 0; i < odds.length; i++) {
 //    sum += odds[i]
 //}
 

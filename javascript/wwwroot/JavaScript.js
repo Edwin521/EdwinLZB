@@ -263,3 +263,12 @@
 //    }
 
 //}
+
+////找到数组中的最小值
+//var min = numbers[i];
+//for (var i = 0; i < numbers.length; i++) {
+//    if (min < numbers[i]) {
+//        min = numbers[i];
+//    }
+//}
+//console.log(min);

@@ -115,7 +115,7 @@
 //console.log(array.length);
 
 
-//alert(students);
+///////////////////////////////////////
 
 
 
@@ -141,7 +141,7 @@
 
 
 
-/////
+//////////////////////////////////////////
 
 //////声明一个数组odds，利用循环把100以内的奇数按从小到大的顺序存入其中 
 var odds = [];
@@ -153,13 +153,33 @@ for (var i = 1; i < 100; i++) {
     }
 }
 console.log(odds);
-//console.log(odds);
-////计算从odds数组中所有元素的和
-//var sum = 0;
 
-//for (let i = 0; i < odds.length; i++) {
-//    sum += odds[i]
+
+//////////////////////////////////////////
+////计算从odds数组中所有元素的和
+var sum = 0;
+for (var i = 1; i < odds.length; i++) {
+    sum += odds[i];
+}
+////////////////////////////////
+
+////找到数组中的最小值
+//////假设当前数组中的第一个值是最大值，然后拿这个最大值和后面的项逐一比较，如果后面的某一个值比假设的值还大，说明假设错了，我们把假设的值进行替换
+//var min = odds[0];
+//for (var i = 0; i < odds.length; i++) {
+//    var cute = odds[i];
+//    cute < min ? min = cute : null;
 //}
+//console.log(min);
+
+var min = odds[0];
+for (var i = 1; i < odds.length; i++) {
+    if (min > odds[i]) {
+        min = odds[i];
+    }
+}
+console.log(min);
+
 
 ////去除一个数组中重复的值
 
@@ -178,11 +198,3 @@ console.log(odds);
 
 //}
 
-////找到数组中的最小值
-//var min = numbers[i];
-//for (var i = 0; i < numbers.length; i++) {
-//    if (min < numbers[i]) {
-//        min = numbers[i];
-//    }
-//}
-//console.log(min);

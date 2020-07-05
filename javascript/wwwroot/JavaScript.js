@@ -110,13 +110,13 @@
 
 //将源栈同学姓名装入数组，再根据该数组输出所有同学，
 
-var students = ['阿博', '王胖子', '阿泰', '啊平'];
-for (var i in students) {
-    console.log(i + ':' + students[i] + '<br>');
-    
-}
+//var students = ['阿博', '王胖子', '阿泰', '啊平'];
+//for (var i = 0; i < students.length; i++) {
+//    console.log(students[i]);
+//}
 
-students.length;
+
+//alert(students);
 
 
 
@@ -136,18 +136,7 @@ students.length;
 //}
 
 
-//var person = {
-//    name: ['Bob', 'Smith'],
-//    age: 32,
-//    gender: 'male',
-//    interests: ['music', 'skiing'],
-//    bio: function () {
-//        alert(this.name[0] + ' ' + this.name[1] + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
-//    },
-//    greeting: function () {
-//        alert('Hi! I\'m ' + this.name[0] + '.');
-//    }
-//};
+
 
 
 //输入三角形的边长，判断这三角形能否构成三角形。
@@ -242,3 +231,35 @@ students.length;
 
 
 /////
+
+//////声明一个数组odds，利用循环把100以内的奇数按从小到大的顺序存入其中 
+//var odds = new Array();
+//var k = 0;
+//for (var i = 1; i < 100; i += 2) {
+//    odds[i] = i;
+//    k+=2;
+
+//}
+//for (var j = 0; j < odds.length; j++) {
+//    console.log(odds[j]);
+//}
+////计算从odds数组中所有元素的和
+//var sum = 0;
+////sum=
+
+
+
+
+////输出1000以内的所有“素数
+//var i, j, m;
+//for (i = 0; i <1000; i++) {
+//    for (m = 1, j = 2; j < i; j++)
+//        if (i % j == 0) {
+//            m = 0; break;
+//        }
+//    if (m == 1) {
+//        console.log(i);
+
+//    }
+
+//}

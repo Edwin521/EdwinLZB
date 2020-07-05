@@ -244,7 +244,10 @@ for (var i = 1; i < 100; i++) {
 console.log(odds);
 ////计算从odds数组中所有元素的和
 //var sum = 0;
-////sum=
+
+//for (let i = 0; i < arr.length; i++) {
+//    sum += odds[i]
+//}
 
 
 

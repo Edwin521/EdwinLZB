@@ -233,10 +233,12 @@
 /////
 
 //////声明一个数组odds，利用循环把100以内的奇数按从小到大的顺序存入其中 
-var odds = [];
+var odds= [];
+var j = 0;
 for (var i = 1; i < 100; i++) {
     if (i % 2 !== 0) {
-        odds[i] = i;
+        odds[j] = i;
+        j++;
     }
 }
 console.log(odds);

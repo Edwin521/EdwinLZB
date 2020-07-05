@@ -144,26 +144,26 @@
 //////////////////////////////////////////
 
 //////声明一个数组odds，利用循环把100以内的奇数按从小到大的顺序存入其中 
-var odds = [];
-var j = 0;
-for (var i = 1; i < 100; i++) {
-    if (i % 2 !== 0) {
-        odds[j] = i;
-        j++;
-    }
-}
-console.log(odds);
+//var odds = [];
+//var j = 0;
+//for (var i = 1; i < 100; i++) {
+//    if (i % 2 !== 0) {
+//        odds[j] = i;
+//        j++;
+//    }
+//}
+//console.log(odds);
 
 
 //////////////////////////////////////////
-////计算从odds数组中所有元素的和
-var sum = 0;
-for (var i = 1; i < odds.length; i++) {
-    sum += odds[i];
-}
+//////计算从odds数组中所有元素的和
+//var sum = 0;
+//for (var i = 1; i < odds.length; i++) {
+//    sum += odds[i];
+//}
 ////////////////////////////////
 
-////找到数组中的最小值
+///////////找到数组中的最小值
 //////假设当前数组中的第一个值是最大值，然后拿这个最大值和后面的项逐一比较，如果后面的某一个值比假设的值还大，说明假设错了，我们把假设的值进行替换
 //var min = odds[0];
 //for (var i = 0; i < odds.length; i++) {
@@ -172,16 +172,20 @@ for (var i = 1; i < odds.length; i++) {
 //}
 //console.log(min);
 
-var min = odds[0];
-for (var i = 1; i < odds.length; i++) {
-    if (min > odds[i]) {
-        min = odds[i];
-    }
-}
-console.log(min);
+//var min = odds[0];
+//for (var i = 1; i < odds.length; i++) {
+//    if (min > odds[i]) {
+//        min = odds[i];
+//    }
+//}
+//console.log(min);
 
 
-////去除一个数组中重复的值
+////////////去除一个数组中重复的值
+///////(网上看的利用ES6的Set数据结构去重，Set类似数组，但里面的元素不重复)
+var arr = [1, 3, 2, 3, 4, 6, 6, 77, 55, 43, 2, 1, 3, 44, 5];
+var arrs = [...new Set(arr)];
+console.log(arrs, arrs instanceof Array);
 
 
 ////输出1000以内的所有“素数

@@ -110,9 +110,12 @@
 
 //将源栈同学姓名装入数组，再根据该数组输出所有同学，以及共有多少位同学
 
-//var array= ['阿博', '王胖子', '阿泰', '啊平'];
-//alert(array);
-//console.log(array.length);
+var array= ['阿博', '王胖子', '阿泰', '啊平'];
+for (var i = 0; i < array.length; i++) {
+    console.log(array[i]);
+}
+
+console.log(array.length);
 
 
 ///////////////////////////////////////

@@ -110,12 +110,12 @@
 
 //将源栈同学姓名装入数组，再根据该数组输出所有同学，以及共有多少位同学
 
-var array= ['阿博', '王胖子', '阿泰', '啊平'];
-for (var i = 0; i < array.length; i++) {
-    console.log(array[i]);
-}
+//var array= ['阿博', '王胖子', '阿泰', '啊平'];
+//for (var i = 0; i < array.length; i++) {
+//    console.log(array[i]);
+//}
 
-console.log(array.length);
+//console.log(array.length);
 
 
 ///////////////////////////////////////
@@ -209,21 +209,72 @@ console.log(array.length);
 
 ////////////////////////////////////////////////////////////
 //将之前“找出素数”的代码封装成一个函数findPrime(max)，可以打印出max以内的所有素数。
-function findPrime(max) {
-    var max = [];
+//function findPrime(max) {
+//    var max = [];
 
 
-    var count = 0;
-    for (var i = 1; i < max.length; i++) {
-        for (var j = 1; j <= i; j++) {
-            if (i % j == 0) {
-                count++;
-            }
-        }
-        if (count == 2) {
-            max[0]=(i + " ");
-        }
-        count ==0;
-    }
-return max[0];
-}      
+//    var count = 0;
+//    for (var i = 1; i < max.length; i++) {
+//        for (var j = 1; j <= i; j++) {
+//            if (i % j == 0) {
+//                count++;
+//            }
+//        }
+//        if (count == 2) {
+//            max[0]=(i + " ");
+//        }
+//        count ==0;
+//    }
+//return max[0];
+//}      
+
+
+/////////////////////////////////////////////////////////
+//构建一个函数has9(number) ，可以判断number中是否带有数字9；（19 / 98）
+//console.log(has9(19));
+//console.log(!has9(4));
+//console.log(has9(99));
+
+//function has9(number) {
+//    if (number == 19) {
+//        return true;
+//    } else {
+//        return false;
+//    }
+//}
+
+
+
+//////////////////////
+//构建一个函数has8(number)，可以判断number中是否带有数字8； 
+//console.log(has8(18));
+//console.log(has8(22));
+//console.log(has8(88));
+
+//function has8(number) {
+
+//        return number === 8;
+
+//}
+
+//////////////////
+////构建一个函数has6(number) ，可以判断number中是否带有数字6；
+//console.log(has6(16));
+//console.log(has6(27));
+//console.log(has6(66));
+
+//function has6(number) {
+
+//        return number === 6;
+
+//}
+////////////////////////////
+//使用上述函数，找出10000以内有多少个数字包含：9或者8或者6。
+
+function has986(number) {
+    var arr = [0];
+    for (var i = 0; i < 1000; i++) {
+        if (arr[i] === 9, 8, 6)
+    } return arr[i];
+
+}

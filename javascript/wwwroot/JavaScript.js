@@ -233,13 +233,16 @@
 //构建一个函数has9(number) ，可以判断number中是否带有数字9；（19 / 98）
 //console.log(has9(19));
 //console.log(!has9(4));
-//console.log(has9(99));
+////console.log(has9(99));
+//var number = [1,4,3,9,23];
 
+//has9(number);
 //function has9(number) {
-//    if (number == 19) {
-//        return true;
-//    } else {
-//        return false;
+//    for (var i = 0; i < number.length; i++) {
+//        if (number[i]===9) {
+//            alert("带有数字9");
+//        }//else nothing
+       
 //    }
 //}
 
@@ -250,31 +253,48 @@
 //console.log(has8(18));
 //console.log(has8(22));
 //console.log(has8(88));
-
+//var number = [1, 4, 6, 9, 8,78,18,23];
+//has8(number);
+//has8(number);
 //function has8(number) {
+//    for (var i = 0; i < number.length; i++) {
+//        if (number[i] === 8) {
+//            alert("带有数字8");
+//        }//else nothing
 
-//        return number === 8;
-
+//    }
 //}
+
+
+
+
 
 //////////////////
-////构建一个函数has6(number) ，可以判断number中是否带有数字6；
-//console.log(has6(16));
-//console.log(has6(27));
-//console.log(has6(66));
+//////构建一个函数has6(number) ，可以判断number中是否带有数字6；
+//var number = [1, 4, 6, 9, 23];
 
-//function has6(number) {
+has6(number);
+function has6(number) {
+    for (var i = 0; i < number.length; i++) {
+        if (number[i] === 6) {
+            alert("带有数字6");
+        }//else nothing
 
-//        return number === 6;
+    }
+}
 
-//}
+
+
 ////////////////////////////
 //使用上述函数，找出10000以内有多少个数字包含：9或者8或者6。
+var arr = [0];
+has689(number);
+function has689(number) {
+    for (var i = 0; i < 10000; i++) {
+        if (number[i] === 6 || 8 || 9) {//找出包含8或者9或者6的数字
+            arr[arr.length] = i;//通过数组的下标添加元素
+        }//else nothing
 
-function has986(number) {
-    var arr = [0];
-    for (var i = 0; i < 1000; i++) {
-        if (arr[i] === 9, 8, 6)
-    } return arr[i];
-
+    }
 }
+console.log(arr)//输出到控制台

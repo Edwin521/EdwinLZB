@@ -1,5 +1,10 @@
 ﻿//alert("if you think you can .then you can.");
 
+
+
+
+
+
 ////声明一个变量sname，表示同学的姓名；通过更改变量值，弹出至少3个同学的姓名 
 //var sname = "李智博";
 //alert(sname);
@@ -242,7 +247,7 @@
 //        if (number[i]===9) {
 //            alert("带有数字9");
 //        }//else nothing
-       
+
 //    }
 //}
 
@@ -273,28 +278,114 @@
 //////构建一个函数has6(number) ，可以判断number中是否带有数字6；
 //var number = [1, 4, 6, 9, 23];
 
-has6(number);
-function has6(number) {
-    for (var i = 0; i < number.length; i++) {
-        if (number[i] === 6) {
-            alert("带有数字6");
-        }//else nothing
+//has6(number);
+//function has6(number) {
+//    for (var i = 0; i < number.length; i++) {
+//        if (number[i] === 6) {
+//            alert("带有数字6");
+//        }//else nothing
 
-    }
-}
+//    }
+//}
 
 
 
-////////////////////////////
-//使用上述函数，找出10000以内有多少个数字包含：9或者8或者6。
-var arr = [0];
-has689(number);
-function has689(number) {
-    for (var i = 0; i < 10000; i++) {
-        if (number[i] === 6 || 8 || 9) {//找出包含8或者9或者6的数字
-            arr[arr.length] = i;//通过数组的下标添加元素
-        }//else nothing
+//////////////////////////////
+////使用上述函数，找出10000以内有多少个数字包含：9或者8或者6。
+//var arr = [0];
+//has689(number);
+//function has689(number) {
+//    for (var i = 0; i < 10000; i++) {
+//        if (number[i] === 6 || 8 || 9) {//找出包含8或者9或者6的数字
+//            arr[arr.length] = i;//通过数组的下标添加元素
+//        }//else nothing
 
-    }
-}
-console.log(arr)//输出到控制台
+//    }
+//}
+//console.log(arr)//输出到控制台
+
+
+
+////
+//var num = 0;
+//for (var i=1; i <=100; i++) {
+//    if (i%3==0) {
+//        num = num + i;    }
+//}
+//alert('1~100之间能被3整除的数字的和是：' + num);
+/////////////////////////
+//var num = prompt('请输入班级人数：');
+//var sum = 0;
+//var average = 0;
+//for (var i = 1; i <= num; i++) {
+//    var score = prompt('请你输入第' + i + '个学生的成绩');
+//    sum = sum + parseInt(score);
+//}
+//average = sum / num;
+//alert('班级的总成绩为：' + sum + '分');
+//alert('班级的平均分为:' + average);
+//////////////////打印五行五列星星
+//var str = '';
+//for (var i = 1; i <=5; i++) {
+//    for (var j = 1; j <=5 ; j++) {
+//        str = str + '💛';
+//    }
+//    str = str + '\n';
+//}
+//console.log(str);
+
+//打印n行n列的星星
+//var hang = prompt('请你输入行数:');
+//var lie = prompt('请你输入列数');
+//var str = '';
+//for (var i = 1; i <= hang; i++) {
+//    for (var j = 1; j <= lie; j++) {
+//        str = str + '😜';
+//    }
+//    str = str + '\n';
+//}
+//console.log(str);
+
+/////打印倒三角形
+//var str = '';
+//for (var i = 1; i <= 10; i++) {
+//    for (var j = i; j <=10 ; j++) {
+//        str = str + '💖';
+//    } str = str + '\n';
+//}
+//console.log(str);
+///打印九九乘法表
+//var str = '';
+//for (var i = 1; i <= 9; i++) {
+//    for (var j = 1; j <= i; j++) {
+//        str += j+'×' +i+'＝'+i*j+'\t';
+//    } str+='\n';
+//}
+////console.log(str);
+//var sum = 0;
+//for (var i = 1; i <= 100; i++) {
+//    if (i%7==0) {
+//        continue;
+//    }
+//    sum += i;
+//}
+//console.log(sum);//continue的使用
+//var arr = [23,42,23,56,875,4,3,21,23,34];//找出数组中大于40的数字
+//var newArr = [];
+//var j = 0;
+//for (var i = 0; i < arr.length; i++) {
+//    if (arr[i]>=40) {
+//        newArr[j] = arr[i];
+//        j++;
+//    }
+//}
+//console.log(newArr);
+////数组去重
+//var arr = [23, 42, 23, 56, 0, 4, 3, 21, 23, 34];
+//var newArr = [];
+//for (var i = 0; i < arr.length; i++) {
+//    if (arr[i] != 0) {
+//        newArr[newArr.length] = arr[i];
+//    }
+//}
+//console.log(newArr);

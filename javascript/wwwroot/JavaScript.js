@@ -389,3 +389,11 @@
 //    }
 //}
 //console.log(newArr);
+
+////数组的翻转应用
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var newArr = [];
+for (var i = arr.length-1; i >= 0; i--) {
+    newArr[newArr.length] = arr[i]
+}
+console.log(newArr);

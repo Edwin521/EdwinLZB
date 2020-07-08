@@ -391,9 +391,23 @@
 //console.log(newArr);
 
 ////数组的翻转应用
-var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-var newArr = [];
-for (var i = arr.length-1; i >= 0; i--) {
-    newArr[newArr.length] = arr[i]
+//var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//var newArr = [];
+//for (var i = arr.length-1; i >= 0; i--) {
+//    newArr[newArr.length] = arr[i]
+//}
+//console.log(newArr);
+
+////实现冒泡排序
+var arr = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+for (var i = 0; i < arr.length-1; i++) {//外层循环管交换趟数
+    for (var j = 0; j < arr.length-i-1; j++) {//里层循环管每趟交换的次数
+        //内部交换两个变量的值
+        if (arr[j] > arr[j+1]) {
+            var temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+        }
+    }
 }
-console.log(newArr);
+console.log(arr);

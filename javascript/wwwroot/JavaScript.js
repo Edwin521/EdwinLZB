@@ -248,9 +248,9 @@
 //            alert("带有数字9");
 //        }//else nothing
 
-//    }
-//}
-
+////    }
+////}
+//has9();
 
 
 //////////////////////
@@ -258,35 +258,23 @@
 //console.log(has8(18));
 //console.log(has8(22));
 //console.log(has8(88));
-//var number = [1, 4, 6, 9, 8,78,18,23];
-//has8(number);
-//has8(number);
+//var num = [1, 4, 6, 9, 8,78,18,23];
+
 //function has8(number) {
-//    for (var i = 0; i < number.length; i++) {
-//        if (number[i] === 8) {
+//    for (var i = 0; i < num.length; i++) {
+//        if (num[i] === 8) {
 //            alert("带有数字8");
 //        }//else nothing
 
 //    }
 //}
-
+//has8();
 
 
 
 
 //////////////////
 //////构建一个函数has6(number) ，可以判断number中是否带有数字6；
-//var number = [1, 4, 6, 9, 23];
-
-//has6(number);
-//function has6(number) {
-//    for (var i = 0; i < number.length; i++) {
-//        if (number[i] === 6) {
-//            alert("带有数字6");
-//        }//else nothing
-
-//    }
-//}
 
 
 
@@ -300,9 +288,10 @@
 //            arr[arr.length] = i;//通过数组的下标添加元素
 //        }//else nothing
 
-//    }
-//}
-//console.log(arr)//输出到控制台
+////    }
+////}
+////console.log(arr)//输出到控制台
+//has689();
 
 
 
@@ -399,15 +388,15 @@
 //console.log(newArr);
 
 ////实现冒泡排序
-var arr = [9, 8, 7, 6, 5, 4, 3, 2, 1];
-for (var i = 0; i < arr.length-1; i++) {//外层循环管交换趟数
-    for (var j = 0; j < arr.length-i-1; j++) {//里层循环管每趟交换的次数
-        //内部交换两个变量的值
-        if (arr[j] > arr[j+1]) {
-            var temp = arr[j];
-            arr[j] = arr[j + 1];
-            arr[j + 1] = temp;
-        }
-    }
-}
-console.log(arr);
+//var arr = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+//for (var i = 0; i < arr.length-1; i++) {//外层循环管交换趟数
+//    for (var j = 0; j < arr.length-i-1; j++) {//里层循环管每趟交换的次数
+//        //内部交换两个变量的值
+//        if (arr[j] > arr[j+1]) {
+//            var temp = arr[j];
+//            arr[j] = arr[j + 1];
+//            arr[j + 1] = temp;
+//        }
+//    }
+//}
+//console.log(arr);

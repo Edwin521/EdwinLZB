@@ -239,59 +239,64 @@
 //console.log(has9(19));
 //console.log(!has9(4));
 ////console.log(has9(99));
-//var number = [1,4,3,9,23];
+var number = [12, 34, 78, 97, 87, 89, 99, 58, 69];
 
-//has9(number);
-//function has9(number) {
-//    for (var i = 0; i < number.length; i++) {
-//        if (number[i]===9) {
-//            alert("带有数字9");
-//        }//else nothing
+has9(number);
+function has9(number) {
+    return hasX(number + '', 9);
+    
+}
 
-////    }
-////}
-//has9();
+function has8(number) {
+    return hasX(number + '', 8);
+
+}
+
+function has6(number) {
+    return hasX(number + '', 6);
+
+}
+
+function hasX(number,X) {
+    for (var i = 0; i < number.length; i++) {
+        if (number[i] == X) {
+            return true;
+        }
+    }
+    return false;
+}
+
+//找出10000以内有多少数字包含9，8，6.
+var arr = [0];
+has689(number);
+function has689(number) {
+    var j = 0; 
+    for (var i = 0; i < 10000; i++) {
+        if (has9(i) || has8(i) || has6(i)) {
+            j++;
+        }
+    }
+    return j;
+}
+console.log(arr)
 
 
-//////////////////////
-//构建一个函数has8(number)，可以判断number中是否带有数字8； 
-//console.log(has8(18));
-//console.log(has8(22));
-//console.log(has8(88));
-//var num = [1, 4, 6, 9, 8,78,18,23];
-
-//function has8(number) {
-//    for (var i = 0; i < num.length; i++) {
-//        if (num[i] === 8) {
-//            alert("带有数字8");
-//        }//else nothing
-
-//    }
-//}
-//has8();
 
 
 
 
-//////////////////
-//////构建一个函数has6(number) ，可以判断number中是否带有数字6；
 
 
 
-//////////////////////////////
-////使用上述函数，找出10000以内有多少个数字包含：9或者8或者6。
-//var arr = [0];
-//has689(number);
-//function has689(number) {
-//    for (var i = 0; i < 10000; i++) {
-//        if (number[i] === 6 || 8 || 9) {//找出包含8或者9或者6的数字
-//            arr[arr.length] = i;//通过数组的下标添加元素
-//        }//else nothing
 
-////    }
-////}
-////console.log(arr)//输出到控制台
-//has689();
+
+
+
+
+
+
+
+
 
 
 
@@ -386,6 +391,7 @@
 //    newArr[newArr.length] = arr[i]
 //}
 //console.log(newArr);
+
 
 ////实现冒泡排序
 //var arr = [9, 8, 7, 6, 5, 4, 3, 2, 1];

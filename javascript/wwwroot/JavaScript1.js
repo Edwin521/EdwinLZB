@@ -129,20 +129,24 @@
 //console.log(arr[getRandom(0, 3)]);
 
 /////////猜数字游戏 1-1000
-//function getRandom(min, max) {
-//    return Math.floor(Math.random() * (max - min + 1)) + min;
+//function getrandom(min, max) {
+//    return math.floor(math.random() * (max - min + 1)) + min;
 //}
-//var random = getRandom(1, 1000);
-//while (true) {
-//    var num = prompt('你来猜？1~1000之间的数');
-//    if (num > random) {
-//        alert('你猜大了')
-//    } else if (num < random) {
-//        alert('你猜小了');
-//    } else {
-//        alert('你好棒哦，你猜中了');
-//        break;
+//var random = getrandom(1, 10);
+//for (var i = 0; i <=10; i++) {
 
+
+//    while (true) {
+//        var num = prompt('你来猜？1~10之间的数');
+//        if (num > random) {
+//            alert('你猜大了')
+//        } else if (num < random) {
+//            alert('你猜小了');
+//        } else {
+//            alert('你好棒哦，你猜中了');
+//            break;
+
+//        }
 //    }
 //}
 
@@ -161,33 +165,47 @@
 //用了8 - 10次猜到，弹出：猜到了。
 //用了10次都还没猜对，弹出：^ (*￣(oo) ￣
 
-var randomSum = Math.floor(Math.random() * 1000);
-alert('随机数参考' + randomSum);
+//var randomSum = Math.floor(Math.random() * 1000);
+//alert('随机数参考' + randomSum);
 
-for (var i = 1; i <= 10; i++) {
-    var input = '';
+//for (var i = 1; i <= 10; i++) {
+//    var input = '';
 
 
-    alert('第' + i + '次猜测');
-    input = prompt('请输入正整数');
-    if (!isNaN(input)) {
-        if (input != randomSum) {
-            alert(input > randomSum ? '大了' : '小了');
-        }
-        if (input === randomSum) {
-            if (i < 6) {
-                alert('碉堡了');
-            } else if (i < 8) {
-                alert('666')
-            } else if (i < 10) {
-                alert('猜到了')
-            } else {
-                alert('你是猪吗')
-            }
-            break;
-        }
-    }
-    else {
-        alert('请输入正整数');
-    }
+//    alert('第' + i + '次猜测');
+//    input = prompt('请输入正整数');
+//    if (!isNaN(input)) {
+//        if (input != randomSum) {
+//            alert(input > randomSum ? '大了' : '小了');
+//        }
+//        if (input === randomSum) {
+//            if (i < 6) {
+//                alert('碉堡了');
+//            } else if (i < 8) {
+//                alert('666')
+//            } else if (i < 10) {
+//                alert('猜到了')
+//            } else {
+//                alert('你是猪吗')
+//            }
+//            break;
+//        }
+//    }
+//    else {
+//        alert('请输入正整数');
+//    }
+//}
+//生成一个函数toChinese() ，可将传入的日期参数（如：new Date() ）转换成中文日期格式（如：2019年10月4日 16点54分）
+
+
+function toChinese(year, month, dates, day) {
+    var time = new Date;
+    var year = time.getFullYear();
+    var month = time.getMonth() + 1;
+    var dates = time.getDate();
+    var hour = time.getHours();
+    var minute = time.getMinutes();
+
+    return year + '年' + month + '月' + dates + '日' + hour + '点' + minute+'分';
 }
+console.log(toChinese());

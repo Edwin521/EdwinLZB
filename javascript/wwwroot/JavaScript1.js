@@ -198,14 +198,26 @@
 //生成一个函数toChinese() ，可将传入的日期参数（如：new Date() ）转换成中文日期格式（如：2019年10月4日 16点54分）
 
 
-function toChinese(year, month, dates, day) {
-    var time = new Date;
-    var year = time.getFullYear();
-    var month = time.getMonth() + 1;
-    var dates = time.getDate();
-    var hour = time.getHours();
-    var minute = time.getMinutes();
+//function toChinese() {
+//    var time = new Date;
+//    var year = time.getFullYear();
+//    var month = time.getMonth() + 1;
+//    var dates = time.getDate();
+//    var hour = time.getHours();
+//    var minute = time.getMinutes();
 
-    return year + '年' + month + '月' + dates + '日' + hour + '点' + minute+'分';
-}
-console.log(toChinese());
+//    return year + '年' + month + '月' + dates + '日' + hour + '点' + minute+'分';
+//}
+//console.log(toChinese());
+//////////////不使用JavaScript内置函数，将一个字符串顺序颠倒，比如：'hello,yuanzhan' 变成 'nahznauy,olleh'
+//var overTurn = 'hello,yuanzhan';
+//function bottomUp(overTurn) {
+//    var sort = '';
+
+//for (var i = overTurn.length - 1; i >= 0; i--) {
+//    sort += overTurn[i];
+//    }
+//    return sort;
+//}
+//bottomUp(overTurn);
+//console.log(bottomUp(overTurn));

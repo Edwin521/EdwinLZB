@@ -224,11 +224,11 @@
 
 
 ////找出句子中有多少单词
-var str = "string.lengthThere are two ways to create a RegExp object: a literal notation and a constructor.To indicate strings, the parameters to the literal notation do not use quotation marks while the parameters to the constructor function do use quotation - marks.So the following expressions create the same regular expression";
-str = str.split(" ");
-    ///没写完 排除“-”
-alert(str.length);
-console.log(str);
+//var str = "string.lengthThere are two ways to create a RegExp object: a literal notation and a constructor.To indicate strings, the parameters to the literal notation do not use quotation marks while the parameters to the constructor function do use quotation - marks.So the following expressions create the same regular expression";
+//str = str.split(" ");
+//    ///没写完 排除“-”
+//alert(str.length);
+//console.log(str);
 
 
 

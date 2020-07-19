@@ -3,9 +3,260 @@
 <head>
     <meta charset="utf-8" />
     <title>源栈助你实现人生梦想！！！！</title>
+    <!--<script src="JavaScript1.js"></script >
+    <script src="lib/时间.js"></script>-->
+
+    <style>
+          /* img{
+              width:300px;
+          }*/
+
+          /* .box {
+              position:relative;
+              width:400px;
+              border-bottom:1px solid #ccc;
+              margin:100px auto;
+          }
+              .box input{
+                  width:370px;
+                  height:30px;
+                  border:0;
+                  outline:none;
+              }
+              .box img {
+                  position: absolute;
+                  top: 2px;
+                  right: 2px;
+                  width: 24px;
+              }*/
+          /*.box{
+             position:relative;
+             width:74px;
+             height:88px;
+             border:1px solid#ccc;
+             margin:100px auto;
+             font-size:12px;
+             text-align:center;
+             color:red;
+         }
+
+         .box img{
+             width:60px;
+             margin-top:5px;
+         }
+        .close-btn{
+            position:absolute;
+            top:-1px;
+            left:-16px;
+            width:14px;
+            height:14px;
+            border:1px solid#ccc;
+            line-height:14px;
+            font-family:Arial, Helvetica, sans-serif;
+            cursor:pointer;
+        }*/
+
+          /*.box li{
+             float:left;
+             width:24px;
+             height:24px;
+             background-color:pink;
+             margin:15px;
+             background:url(img/sprite.png) no-repeat;
+         }
+         li{
+             list-style-type:none;
+         }
+         .box{
+             width:250px;
+             margin:100px auto;
+         }
+         *{
+             margin:0;
+             padding:0;
+
+         }*/
+
+          /*.change{
+             background-color:purple;
+             color:#fff;
+             font-size:25px;
+             margin-top:100px;
+         }
+         div{
+             width:100px;
+             height:100px;
+             background-color:pink;
+         }*/
+          /*
+
+         密码框验证消息*/
+          div {
+              width: 600px;
+              margin: 100px auto;
+          }
+          .message{
+              display:inline-block;
+              font-size:12px;
+              color:#999;
+              background:url(img/mess.png) no-repeat left center;
+              padding-left:20px;
+
+          }
+          .wrong{
+              color:red;
+              background-image:url(img/wrong.png);
+          }
+          .right{
+              color:green;
+              background-image:url(img/right.png);
+          }
+          /*密码框验证*/
+    </style>
 </head>
+
 <body>
-    <h1 style="color:blue">我的JavaScript实例</h1>
-    <script src="JavaScript1.js"></script>
+
+    <!--//////用户注册页面密码框验证-->
+    <div class="register">
+        <input type='password' class='wan' />
+        <p class='message'>请输入6~16位密码</p>
+    </div>
+
+    <!--///////-->
+    <!--<div>文本</div>-->
+    <!--div class="box">
+              <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+
+              </ul>
+          </div>-->
+    <!--<div class="box">
+        我的二维码
+        <img src="img/tao.png" />
+        <i class="close-btn">x</i>
+    </div>-->
+    <!--<div class="box">
+        <label for="">
+            <img src="img/close.png" id="eye"/>
+        </label>
+        <input type="password" id="pwd" />
+    </div>
+
+    <button>按钮</button>
+    <input type="text" name="输入内容" value="输入内容" />-->
+    <!--<ul>
+        <li>知否知否，应是绿肥红瘦1</li>
+        <li>知否知否，应是绿肥红瘦2</li>
+        <li>知否知否，应是绿肥红瘦3</li>
+        <li>知否知否，应是绿肥红瘦4</li>
+        <li>知否知否，应是绿肥红瘦5</li>
+        <li>知否知否，应是绿肥红瘦5</li>
+    </ul>-->
+    <!--<img src="img/s.jpeg" />-->
+    <!--<div>上午好</div>-->
+    <!--<img src="img/zxy.jpeg" />--> <!--<img src="img/zxy.jpeg" />-->
+    <!--<div id="propagate"> <p> 源栈欢迎您 </p> </div>-->
+    <script>
+
+        ////密码框验证消息///
+        var wan = document.querySelector('.wan');
+        var message = document.querySelector('.message');
+        wan.onblur = function () {
+            if (this.value.length < 6 || this.value.length > 16) {
+                message.className = 'message wrong';
+                message.innerHTML = '您输入的位数不对要求6~16位';
+            } else {
+                message.className = 'message right';
+                message.innerHTML = '您输入的正确';
+            }
+        }
+        ////密码框验证消息
+
+
+                ///////
+                //var test = document.querySelector('div');
+                //test.onclick = function () {
+                //    this.className = 'change';
+                //}
+
+
+
+
+                //var lis = document.querySelectorAll('li');
+
+                //for (var i = 0; i < lis.length; i++) {
+                //    var index = i * 44;
+                //    lis[i].style.backgroundPosition = '0 -' + index + 'px';
+                //}
+                //var btn = document.querySelector('.close-btn');
+                //var box = document.querySelector('.box');
+                //btn.onclick = function () {
+                //    box.style.display = 'none';
+                //}
+                //var eye = document.getElementById('eye');
+                //var pwd = document.getElementById('pwd');
+                //var flag = 0;
+                //eye.onclick = function () {
+                //    if (flag==0) {
+                //        pwd.type = 'text';
+                //        eye.src = 'img/open.png';
+                //        flag = 1;
+                //    } else {
+                //        pwd.type = 'password';
+                //        eye.src = 'img/close.png';
+                //        flag = 0;
+                //    }
+
+                //}
+
+
+
+
+
+
+
+                            ////var btn = document.querySelector('button');
+                            //var div = document.querySelector('div');
+                            //btn.onclick = function () {
+                            //    div.innerText = getDate();
+                            //}
+                            //function getDate() {
+                            //    var date = new Date();
+                            //    var year = date.getFullYear();
+                            //    var month = date.getMonth() + 1;
+                            //    var dates = date.getDate();
+                            //    var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+                            //    var day = date.getDay();
+                            //    return '今天是' + year + '年' + month + '月' + dates + '日' + arr[day];
+                            //}
+                            //var img = document.querySelector('img');
+                            //var div = document.querySelector('div');
+                            //var date = new Date();
+                            //var h = date.getHours();
+                            //if (h<12) {
+                            //    img.src = 'img/s.jpeg';
+                            //    div.innerHTML = '上午好，好好写代码，争取月薪20k。';
+                            //} else if (h < 18) {
+                            //    img.src = 'img/x.jpg';
+                            //    div.innerHTML = '下午好，好好写代码，争取月薪30k';
+                            //} else {
+                            //    img.src = 'img/w.jpeg';
+                            //    div.innerHTML = '晚上好，好好写代码，争取月薪50k';
+                            //}
+
+    </script>
 </body>
+
 </html>

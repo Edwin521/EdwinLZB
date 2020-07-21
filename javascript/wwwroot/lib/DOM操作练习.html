@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>DOM操作练习</title>
+    <style>
+                /* ///主题换肤效果*/
+                /*  * {
+                           margin:0;
+                           padding:0;
+                       }
+                       body{
+                background:url(../img/1.jpg)no-repeat center top;
+                       }
+                       li{
+                           list-style:none;
+                }
+                .huanfu{
+                    overflow:hidden;
+                    margin:auto;
+                    background-color:#fff;
+                    width:410px;
+                    padding-top:3px;
+                }
+                .huanfu li{
+                    float:left;
+                    margin:0 1px;
+                    cursor:pointer;
+                }
+                .huanfu img{
+                    width:100px;
+                }*/
+
+                /*    <!-- ///表格隔行变色效果，鼠标放上去的时候这一行的底色都会变色-- >*/
+                /*table {
+                    width:800px;
+                    margin:100px auto;
+                    text-align:center;
+                    border-collapse:collapse;
+                    font-size:14px;
+        }
+                thead tr{
+                    height:30px;
+                    background-color:skyblue;
+                }
+                tbody tr{
+                    height:30px;
+                }
+                tbody td{
+                    border-bottom:1px solid #808080 ;
+                    font-size:14px;
+                    color:blue;
+                }
+                .bg{
+                    background-color:pink;
+                }*/
+
+
+                /*选择框全选和反选*/
+                *{
+                    padding:0;
+                    margin:0;
+                }
+                .wrap {
+                    width: 300px;
+                    margin: 100px auto 0;
+                }
+
+                table {
+                    border-collapse: collapse;
+                    border-spacing: 0;
+                    border: 1px solid azure;
+                    width: 300px;
+                }
+
+                th, td {
+                    border: 1px solid #808080;
+                    color:cornsilk;
+                    padding: 10px;
+                }
+
+                th {
+                    background-color:aqua;
+                    font: bold 16px 400;
+                    color:chartreuse;
+                }
+                td{
+                    font:14px"微软雅黑";
+                }
+                tbody tr{
+                    background-color:burlywood;
+                }
+                tbody tr:hover{
+                    cursor:pointer;
+                    background-color:deeppink;
+                }
+    </style>
+</head>
+<body>
+    <!--/*选择框全选和反选*/-->
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="j-cbAll" />
+                    </th>
+                    <th>学制时间</th>
+                    <th>价钱</th>
+                </tr>
+            </thead>
+            <tbody id="j-tb">
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>三个月</td>
+                    <td>8000软妹币</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>五个月</td>
+                    <td>12000软妹币</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>六个月</td>
+                    <td>15000软妹币</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!--///排他算法-->
+    <!--<button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>-->
+    <!--///主题换肤效果!!!!-->
+    <!--<ul class="huanfu">
+        <li><img src="../img/1.jpg" /></li>
+        <li><img src="../img/2.jpg" /></li>
+        <li><img src="../img/3.jpg" /></li>
+        <li><img src="../img/4.jpg" /></li>
+    </ul>-->
+    <!--///表格隔行变色效果，鼠标放上去的时候这一行的底色都会变色-->
+    <!--<table>
+        <thead>
+            <tr>
+                <th>代号</th>
+                <th>姓名</th>
+                <th>源栈口号</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>001</td>
+                <td>李智博</td>
+                <td>If you think you can.then you can.</td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>王胖子</td>
+                <td>人生没有最好的选择，只有承担自己的选择</td>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td>刘大人</td>
+                <td>别逼逼，给我看你的代码</td>
+            </tr>
+
+        </tbody>
+    </table>-->
+    <script>
+        //选择框选择和反选
+        var j-All
+
+
+
+                    //       ///表格隔行变色效果，鼠标放上去的时候这一行的底色都会变色-->
+                    ////1获取tbody里面所有的行
+                    //var sts = document.querySelector('tbody').querySelectorAll('tr');
+                    ////2利用循环绑定注册事件
+                    //for (var i = 0; i < sts.length; i++) {
+                    //    //3鼠标经过事件 onmuseover
+                    //    sts[i].onmouseover = function () {
+                    //        this.className = 'bg';
+                    //    }
+                    //    //4.鼠标离开时的事件 onmouseout
+                    //    sts[i].onmouseout = function () {
+                    //        this.className = '';
+
+                    //    }
+                    //}
+
+                            ///主题换肤效果！！！！！
+                            //var imgs = document.querySelector('.huanfu').querySelectorAll('img');
+                            //console.log(imgs);
+                            ////循环注册事件、、、、
+                            //for (var i = 0; i < imgs.length; i++) {
+                            //    imgs[i].onclick = function () {
+                            //        //this.src就是我们点击图片的路径给body就可以了
+                            //        document.body.style.backgroundImage = 'url('+this.src+')'
+                            //    }
+                            //}
+
+                            ///排他算法!!!!!
+                            //var btns = document.getElementsByTagName('button');
+                            //for (var i = 0; i < btns.length; i++) {
+                            //    btns[i].onclick = function () {
+                            //        for (var i = 0; i < btns.length; i++) {
+                            //            btns[i].style.background = '';
+                            //        }
+                            //        this.style.backgroundColor = 'pink';
+                            //    }
+                            //}
+
+    </script>
+</body>
+</html>

@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <title>DOM操作练习</title>
     <style>
-        * {
+       /* //一起帮导航栏下拉列表*/
+        /** {
             margin: 0;
             padding: 0;
         }
@@ -58,11 +59,11 @@
 
                     .nav ul li a:hover {
                         background-color: #FFFFF4;
-                    }
+                    }*/
     </style>
 </head>
 <body>
-    //一起帮导航栏下拉列表
+    <!--//一起帮导航栏下拉列表
     <ul class="nav">
         <li>
             <a href="#">求助</a>
@@ -110,7 +111,7 @@
                 <li>
                     <a href="">列表</a>
                 </li>
-               
+
             </ul>
         </li>
         <li>
@@ -140,7 +141,17 @@
             lis[i].onmouseout = function () {
                 this.children[1].style.display = 'none';
             }
-        }
-    </script>
+        }-->
+    <!--</script>-->
+   
+       
+       
+    <!--///一个“前一页”按钮，点击可以跳到上一页；一个“下一页”按钮，点击可以跳到下一页；-->
+
+    <!--<div id='page1'>第一个页面</div>
+    <button type="button" onclick='javascript:page1.style.display="none";page2.style.display="block";location.hash="page2";'>下一页</button>
+    <div id='page2' style='display:none'>第二个页面</div>
+    <button type="button" onclick='javascript:page2.style.display="none";page1.style.display="block";location.hash="page1";'>前一页</button>-->
+
 </body>
 </html>

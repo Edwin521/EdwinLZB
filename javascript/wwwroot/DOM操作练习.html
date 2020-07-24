@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>DOM操作练习</title>
     <style>
-       /* //一起帮导航栏下拉列表*/
+        /* //一起帮导航栏下拉列表*/
         /** {
             margin: 0;
             padding: 0;
@@ -143,15 +143,20 @@
             }
         }-->
     <!--</script>-->
-   
-       
-       
     <!--///一个“前一页”按钮，点击可以跳到上一页；一个“下一页”按钮，点击可以跳到下一页；-->
-
     <!--<div id='page1'>第一个页面</div>
     <button type="button" onclick='javascript:page1.style.display="none";page2.style.display="block";location.hash="page2";'>下一页</button>
     <div id='page2' style='display:none'>第二个页面</div>
     <button type="button" onclick='javascript:page2.style.display="none";page1.style.display="block";location.hash="page1";'>前一页</button>-->
 
+
+    <script>
+        //一个“转到”按钮，点击该按钮页面可跳转到文本框指定的网址页面
+        function geturl() {
+            var url = "http://" + document.getElementById("url").value;
+            document.location = url;
+        }
+    </script>
+    <input name="url" type="text" id="url" value="" /> <input type="submit" name="Submit" value="转到" onclick="geturl();" />
 </body>
 </html>

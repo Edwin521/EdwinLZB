@@ -148,15 +148,25 @@
     <button type="button" onclick='javascript:page1.style.display="none";page2.style.display="block";location.hash="page2";'>下一页</button>
     <div id='page2' style='display:none'>第二个页面</div>
     <button type="button" onclick='javascript:page2.style.display="none";page1.style.display="block";location.hash="page1";'>前一页</button>-->
-
-
-    <script>
+    <!--<script>
         //一个“转到”按钮，点击该按钮页面可跳转到文本框指定的网址页面
         function geturl() {
             var url = "http://" + document.getElementById("url").value;
             document.location = url;
         }
     </script>
-    <input name="url" type="text" id="url" value="" /> <input type="submit" name="Submit" value="转到" onclick="geturl();" />
+    <input name="url" type="text" id="url" value="" /> <input type="submit" name="Submit" value="转到" onclick="geturl();/>-->
+    <!--一个a标签，点击不会跳转到href指定页面，而是将href的值赋值给下面的一个文本框-->
+    
+
+    <a id="a1" href="baidu.com" onclick="false"  >我是一个a标签</a>
+    <input type="text" value=""  id="a2"/>
+    <script>
+        var a1 = document.getElementById('a1');
+        var a2 = document.getElementById('a2');
+        a1.onclick = function () {
+            a2.value = a1.href;
+        }
+    </script>
 </body>
 </html>

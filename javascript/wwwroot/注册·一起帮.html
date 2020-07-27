@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>注册·一起帮</title>
+    <style >
+        li {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav {
+            margin: 100px;
+        }
+
+            .nav > li {
+                position: relative;
+                float: left;
+                width: 80px;
+                height: 41px;
+                text-align: center;
+            }
+
+            .nav li a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                line-height: 41px;
+                color: #333;
+            }
+
+            .nav > li > a:hover {
+                background-color: #eee;
+            }
+
+            .nav ul {
+                display: none;
+                position: absolute;
+                top: 41px;
+                left: 0;
+                width: 100%;
+                border-left: 1px solid #FECC5B;
+                border-right: 1px solid #FECC5B;
+            }
+
+                .nav ul li {
+                    border-bottom: 1px solid #FECC5B;
+                }
+
+                    .nav ul li a:hover {
+                        background-color: #FFFFF4;
+                    }
+
+        .xiala{
+            position: relative;
+            top: -81px;
+            float:right;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <a href="http://17bang.ren/">
+        <img src='/images/一起帮logo.png' alt="一起帮logo" />
+    </a>
+
+    <span style="font-size:18px;font-weight:600;">一起帮</span>
+    <span class="visible-md-inline visible-lg-inline">·网络互助平台</span>
+
+    <div class="xiala">
+        <ul class="nav">
+            <li>
+                <a href="#">求助</a>
+                <ul>
+                    <li>
+                        <a href="">督导班</a>
+                    </li>
+                    <li>
+                        <a href="">列表</a>
+                    </li>
+                    <li>
+                        <a href="">疑问发布</a>
+                    </li>
+                    <li>
+                        <a href="">疑问列表</a>
+                    </li>
+                    <li>
+                        <a href="">列表</a>
+                    </li>
+                    <li>
+                        <a href="">列表</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">督促</a>
+                <ul>
+                    <li>
+                        <a href="">求督促</a>
+                    </li>
+                    <li>
+                        <a href="">督促别人</a>
+                    </li>
+                    <li>
+                        <a href="">我的目标</a>
+                    </li>
+                    <li>
+                        <a href="">我的督促</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">文章</a>
+                <ul>
+                    <li>
+                        <a href="">列表</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="#">未登录</a>
+                <ul>
+                    <li>
+                        <a href="">登录</a>
+                    </li>
+                    <li>
+                        <a href="">注册</a>
+                    </li>
+                    <li>
+                        <a href="">忘记密码</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <h2>注册</h2>
+    <div>
+        <span>
+            <a href="#">为什么需要邀请</a>
+        </span>
+        <h3>邀请人：（*必填，<a href="#">没有邀请人</a>）</h3>
+        <input type="text" name="name" value="他的用户名，模糊查询只能从头开始" />
+        <h3>邀请码：（*必填）</h3>
+        <input type="text" name="name" value="4位数字" />
+    </div>
+    <h3>用户名：（*必填）</h3>
+    <input type="text" name="name" value="登录用户名，可修改，不能重复" />
+    <h3>密码：（*必填）</h3>
+    <input type="password" name="name" value="不少于4个字符" />
+    <h3>验证密码（*必填）</h3>
+    <input type="password" name="name" value="和密码相同" />
+    <h3>验证码：（*必填）</h3>
+
+    <p>  <input type="text" value="" /> 点击输入框显示</p><br />
+    <button>提交</button>
+    <button>重置</button>
+    <span><a href="#">登录</a></span>
+
+    <script>
+       
+        var nav = document.querySelector('.nav');
+        var lis = nav.children;
+       
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onmouseover = function () {
+                this.children[1].style.display = 'block';
+            }
+
+            lis[i].onmouseout = function () {
+                this.children[1].style.display = 'none';
+            }
+
+        }
+    </script>
+</body>
+    </html>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>chatroom function</title>  
+    
+</head>
+<body>
+    <div js-chat-history>
+        <div>
+            <small js-time></small>
+            <div>要好好学习啊，努力达成目标</div>
+            <hr />
+        </div>
+    </div>
+    <input type="text" js-chat-content/><button js-send>发送</button>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script>
+        
+        
+      
+        $().ready(function () {
+            $('[js-send]').click(function () {
+                var content = $('[js-chat-content]').val;
+                $.ajax({
+                    url: '/sendChat.html?content=' + content,
+                    //error:
+                    success: function (data) {
+                        $('[js-chat-history]').append(data);
+                        }
+                })
+            })
+        })
+    </script>
+</body>
+</html>

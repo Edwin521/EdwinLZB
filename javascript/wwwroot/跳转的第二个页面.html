@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div{
+            background-color:aqua;
+            width:200px;
+            height:20px;
+            text-align-last:center;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        console.log(location.search);//?username=123;
+        var params = location.search.substr(1);//substr('起始的位置'，截取几个字符);
+        //console.log(params);
+        //利用=把字符分割为一个数组 split('=');
+        var arr = params.split('=');
+        //console.log(arr);
+        var div = document.querySelector('div');
+        div.innerHTML = arr[1]+'欢迎你';
+    </script>
+</body>
+</html>

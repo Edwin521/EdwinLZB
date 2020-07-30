@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        /* div{
+            width:200px;
+            height:200px;
+            background-color:pink;
+        }*/
+    </style>
+</head>
+<body>
+
+
+    <!--<script>//定时器
+        window.addEventListener('load', function () {
+
+            var div = this.document.querySelector('div');
+            window.addEventListener('resize', function () {
+                console.log(window.innerWidth);
+                console.log('变化了');
+                if (this.innerWidth <= 800) {
+                    div.style.display = 'none';
+                } else {
+                    div.style.display = 'block';
+                }
+        })
+        })
+
+    </script>
+    <div></div>-->
+    <!--<button class='begin'>开始</button>
+    <button class='stop'>停止</button>
+    <script>///停止定时器
+        var begin = document.querySelector('.begin');
+        var stop = document.querySelector('.stop');
+        var timer = null;
+        begin.addEventListener('click', function () {
+            timer = setInterval(function () {
+                console.log('你好吗');
+            },1000)
+        })
+        stop.addEventListener('click', function () {
+            clearInterval(timer);
+        })
+    </script>-->
+    
+    <!--<div></div>
+    <script>
+    //实现倒计时跳转页面到一起帮
+        var div = document.querySelector('div');
+        var timer = 5;
+        page();
+        document.querySelector('button').addEventListener('click', function () {
+            location.href = 'http://17bang.ren/';
+        })
+        function page() {
+
+        
+        setInterval(function () {
+            if (timer == 0) {
+                location.href = 'http://17bang.ren/';
+            } else {
+                div.innerHTML = '页面将在' + timer + '秒后跳转到一起帮首页';
+                timer--;
+            }
+        }, 1000);
+        }
+    </script>-->
+
+    <form action="跳转的第二个页面.html">
+        用户名：<input type="text" name="username" />
+        <input type="submit" value="登录" />
+    </form>
+    
+</body>
+</html>

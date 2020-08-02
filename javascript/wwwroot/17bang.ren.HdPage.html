@@ -1,12 +1,7 @@
 ﻿<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="Generator" content="EditPlus®">
-    <meta name="Author" content="">
-    <meta name="Keywords" content="">
-    <meta name="Description" content="">
-    <title>calendar</title>
+    <link href="css/common.css" rel="stylesheet" />
     <style>
         .clear:after {
             content: "";
@@ -61,82 +56,229 @@
     </style>
 </head>
 <body>
-    <div class="top clear">
-        <div class="left lf-tri" onclick="lastMonth()"></div>
-        <div class="left content">2020年7月20日</div>
-        <div class="left rf-tri" onclick=" nextMonth()"></div>
+    <p class="text-info yellow-highlight" style="border:1px dashed; padding:5px; border-radius:3px 4px; ">* 请首先选择广告位</p>
+
+    <div class="form-group">
+        <label>选择广告位：（* 必选）</label>
+        <select name="position" id="position" data-val="true" class="form-control" data-val-required="* 广告位不能为空" lzb-ad-in-widget-position="">
+            <option value="">-------------</option>
+            <option value="1">---第 1 位---</option>
+            <option value="2">---第 2 位---</option>
+            <option value="3">---第 3 位---</option>
+            <option value="4">---第 4 位---</option>
+            <option value="5">---第 5 位---</option>
+        </select>
+        <span class="field-validation-valid" data-valmsg-for="position" data-valmsg-replace="true"></span>
     </div>
-    <div>
-        <div id="week">
-            <ul class="clear">
-                <li>日</li>
-                <li>一</li>
-                <li>二</li>
-                <li>三</li>
-                <li>四</li>
-                <li>五</li>
-                <li>六</li>
-                </ul>
-        </div>
-        <div id="date" onclick='getDateNum(event)'>
-            <ul class="clear" typeof="checkbox">
-                <li>30</li>
-                <li>31</li>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-            </ul>
-            <ul class="clear">
-                <li>6</li>
-                <li>7</li>
-                <li>8</li>
-                <li>9</li>
-                <li>10</li>
-                <li>11</li>
-                <li>12</li>
-            </ul>
-            <ul class="clear">
-                <li>13</li>
-                <li>14</li>
-                <li>15</li>
-                <li>16</li>
-                <li>17</li>
-                <li>18</li>
-                <li>19</li>
-            </ul>
-            <ul class="clear">
-                <li>20</li>
-                <li>21</li>
-                <li>22</li>
-                <li>23</li>
-                <li>24</li>
-                <li>25</li>
-                <li>26</li>
-            </ul>
-            <ul class="clear">
-                <li>27</li>
-                <li>28</li>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-            </ul>
-            <ul class="clear">
-                <li>27</li>
-                <li>28</li>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-            </ul>
-        </div>
-        </div>
+    <label>选择日期：（鼠标点击选中/取消）</label>
+    <div lzb-ad-in-widget-date-container="">
+        <p class="text-info yellow-highlight" style="border:1px dashed; padding:5px; border-radius:3px 4px;">* 请首先选择广告位</p>
+    </div>
+    <div class="form-group">
+        <input data-val="true" data-val-required="* 选择日期不能为空" id="SelectedDates" name="SelectedDates" type="hidden" value="" lzb-ad-in-widget-selected-dates="">
+        <span class="field-validation-valid" data-valmsg-for="SelectedDates" data-valmsg-replace="true"></span>
+    </div>
+    
+               
+            <table class="table ad-in-widget-date">
+                <thead>
+                    <tr>
+                        <th>
+                            <input type="checkbox" class="checkbox" lzb-adinwidget-select-all="">
+                        </th>
+                        <th>一</th>
+                        <th>二</th>
+                        <th>三</th>
+                        <th>四</th>
+                        <th>五</th>
+                        <th>六</th>
+                        <th>天</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><input class="checkbox" type="checkbox" lzb-adinwidget-select-row=""></td>
+                        <td class="" lzb-ad-in-widget-date-available="" data-full-date="2020/8/3">
+                            8月3日
+                        </td>
+                        <td class="" lzb-ad-in-widget-date-available="" data-full-date="2020/8/4">
+                            8月4日
+                        </td>
+                        <td class="" lzb-ad-in-widget-date-available="" data-full-date="2020/8/5">
+                            8月5日
+                        </td>
+                        <td class=" " lzb-ad-in-widget-date-available="" data-full-date="2020/8/6">
+                            8月6日
+                        </td>
+                        <td class=" " lzb-ad-in-widget-date-available="" data-full-date="2020/8/7">
+                            8月7日
+                        </td>
+                        <td class=" text-muted" lzb-ad-in-widget-date-available="" data-full-date="2020/8/8">
+                            8月8日
+                        </td>
+                        <td class=" text-muted" lzb-ad-in-widget-date-available="" data-full-date="2020/8/9">
+                            8月9日
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="checkbox" type="checkbox" lzb-adinwidget-select-row=""></td>
+                        <td class=" " lzb-ad-in-widget-date-available="" data-full-date="2020/8/10">
+                            8月10日
+                        </td>
+                        <td class="" lzb-ad-in-widget-date-available="" data-full-date="2020/8/11">
+                            8月11日
+                        </td>
+                        <td class="" lzb-ad-in-widget-date-available="" data-full-date="2020/8/12">
+                            8月12日
+                        </td>
+                        <td class=" " lzb-ad-in-widget-date-available="" data-full-date="2020/8/13">
+                            8月13日
+                        </td>
+                        <td class=" " lzb-ad-in-widget-date-available="" data-full-date="2020/8/14">
+                            8月14日
+                        </td>
+                        <td class=" text-muted" lzb-ad-in-widget-date-available="" data-full-date="2020/8/15">
+                            8月15日
+                        </td>
+                        <td class=" text-muted" lzb-ad-in-widget-date-available="" data-full-date="2020/8/16">
+                            8月16日
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="checkbox" type="checkbox" lzb-adinwidget-select-row=""></td>
+                        <td class=" " lzb-ad-in-widget-date-available="" data-full-date="2020/8/17">
+                            8月17日
+                        </td>
+                        <td class=" " lzb-ad-in-widget-date-available="" data-full-date="2020/8/18">
+                            8月18日
+                        </td>
+                        <td class="" lzb-ad-in-widget-date-available="" data-full-date="2020/8/19">
+                            8月19日
+                        </td>
+                        <td class="" lzb-ad-in-widget-date-available="" data-full-date="2020/8/20">
+                            8月20日
+                        </td>
+                        <td class="" lzb-ad-in-widget-date-available="" data-full-date="2020/8/21">
+                            8月21日
+                        </td>
+                        <td class="text-muted" lzb-ad-in-widget-date-available="" data-full-date="2020/8/22">
+                            8月22日
+                        </td>
+                        <td class="text-muted" lzb-ad-in-widget-date-available="" data-full-date="2020/8/23">
+                            8月23日
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="checkbox" type="checkbox" lzb-adinwidget-select-row=""></td>
+                        <td class=" " lzb-ad-in-widget-date-available="" data-full-date="2020/8/24">
+                            8月24日
+                        </td>
+                        <td class=" " lzb-ad-in-widget-date-available="" data-full-date="2020/8/25">
+                            8月25日
+                        </td>
+                        <td class=" " lzb-ad-in-widget-date-available="" data-full-date="2020/8/26">
+                            8月26日
+                        </td>
+                        <td class=" " lzb-ad-in-widget-date-available="" data-full-date="2020/8/27">
+                            8月27日
+                        </td>
+                        <td class=" " lzb-ad-in-widget-date-available="" data-full-date="2020/8/28">
+                            8月28日
+                        </td>
+                        <td class=" text-muted" lzb-ad-in-widget-date-available="" data-full-date="2020/8/29">
+                            8月29日
+                        </td>
+                        <td class="text-muted" lzb-ad-in-widget-date-available="" data-full-date="2020/8/30">
+                            8月30日
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+
+
+
+
+            /////////////////////////////////////////////////////////////////////////
+            <div class="top clear">
+                <div class="left lf-tri" onclick="lastMonth()"></div>
+                <div class="left content">2020年7月20日</div>
+                <div class="left rf-tri" onclick=" nextMonth()"></div>
+            </div>
+            <div>
+                <div id="week">
+                    <ul class="clear">
+                        <li>日</li>
+                        <li>一</li>
+                        <li>二</li>
+                        <li>三</li>
+                        <li>四</li>
+                        <li>五</li>
+                        <li>六</li>
+                    </ul>
+                </div>
+                <div id="date" onclick='getDateNum(event)'>
+                    <ul class="clear" typeof="checkbox">
+                        <li>30</li>
+                        <li>31</li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
+                    <ul class="clear">
+                        <li>6</li>
+                        <li>7</li>
+                        <li>8</li>
+                        <li>9</li>
+                        <li>10</li>
+                        <li>11</li>
+                        <li>12</li>
+                    </ul>
+                    <ul class="clear">
+                        <li>13</li>
+                        <li>14</li>
+                        <li>15</li>
+                        <li>16</li>
+                        <li>17</li>
+                        <li>18</li>
+                        <li>19</li>
+                    </ul>
+                    <ul class="clear">
+                        <li>20</li>
+                        <li>21</li>
+                        <li>22</li>
+                        <li>23</li>
+                        <li>24</li>
+                        <li>25</li>
+                        <li>26</li>
+                    </ul>
+                    <ul class="clear">
+                        <li>27</li>
+                        <li>28</li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
+                    <ul class="clear">
+                        <li>27</li>
+                        <li>28</li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
+                </div>
+            </div>
             <script>
-                
+
                 function $(id) {
                     return document.getElementById(id);
                 }

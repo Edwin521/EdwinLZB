@@ -1,0 +1,291 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <link href="css/common.css" rel="stylesheet" />
+
+    <style>
+        /*
+        .select {
+            background: #87CEFA;
+
+        }*/
+        .consumption {
+            float: right;
+            margin-right: 60px;
+        }
+    </style>
+</head>
+<body>
+    <!--////日历模块主体-->
+    <p class="text-info yellow-highlight" style="border:1px dashed; padding:5px; border-radius:3px 4px; ">* 请首先选择广告位</p>
+
+    <div class="form-group">
+        <label>选择广告位：（* 必选）</label>
+        <select name="position" id="position" data-val="true" class="form-control" data-val-required="* 广告位不能为空" lzb-ad-in-widget-position="">
+            <option value="">-------------</option>
+            <option value="1">---第 1 位---</option>
+            <option value="2">---第 2 位---</option>
+            <option value="3">---第 3 位---</option>
+            <option value="4">---第 4 位---</option>
+            <option value="5">---第 5 位---</option>
+        </select>
+        <span class="field-validation-valid" data-valmsg-for="position" data-valmsg-replace="true"></span>
+    </div>
+    <label>选择日期：（鼠标点击选中/取消）</label>
+    <div lzb-ad-in-widget-date-container="">
+        <p class="text-info yellow-highlight" style="border:1px dashed; padding:5px; border-radius:3px 4px;">* 请首先选择广告位</p>
+    </div>
+    <div class="form-group">
+        <input data-val="true" data-val-required="* 选择日期不能为空" id="SelectedDates" name="SelectedDates" type="hidden" value="" lzb-ad-in-widget-selected-dates="">
+        <span class="field-validation-valid" data-valmsg-for="SelectedDates" data-valmsg-replace="true"></span>
+    </div>
+
+
+    <table class="table ad-in-widget-date">
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" id="j_cbAll">
+                </th>
+                <th>一</th>
+                <th>二</th>
+                <th>三</th>
+                <th>四</th>
+                <th>五</th>
+                <th>六</th>
+                <th>天</th>
+            </tr>
+        </thead>
+        <tbody id="j_tb">
+
+            <tr>
+                <td><input type="checkbox" name="cb"></td>
+                <td class="on_click">
+                    8月3日
+                </td>
+                <td class="on_click">
+                    8月4日
+                </td>
+                <td class="on_click">
+                    8月5日
+                </td>
+                <td class=" on_click">
+                    8月6日
+                </td>
+                <td class="on_click ">
+                    8月7日
+                </td>
+                <td class="on_click ">
+                    8月8日
+                </td>
+                <td class=" on_click">
+                    8月9日
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="cb"></td>
+                <td class="on_click ">
+                    8月10日
+                </td>
+                <td class="on_click">
+                    8月11日
+                </td>
+                <td class="on_click">
+                    8月12日
+                </td>
+                <td class="on_click ">
+                    8月13日
+                </td>
+                <td class="on_click ">
+                    8月14日
+                </td>
+                <td class=" on_click">
+                    8月15日
+                </td>
+                <td class="on_click ">
+                    8月16日
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="cb"></td>
+                <td class="on_click ">
+                    8月17日
+                </td>
+                <td class="on_click ">
+                    8月18日
+                </td>
+                <td class="on_click">
+                    8月19日
+                </td>
+                <td class="on_click">
+                    8月20日
+                </td>
+                <td class="on_click">
+                    8月21日
+                </td>
+                <td class="on_click">
+                    8月22日
+                </td>
+                <td class="on_click">
+                    8月23日
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="cb"></td>
+                <td class="on_click ">
+                    8月24日
+                </td>
+                <td class=" on_click">
+                    8月25日
+                </td>
+                <td class=" on_click">
+                    8月26日
+                </td>
+                <td class="on_click ">
+                    8月27日
+                </td>
+                <td class="on_click ">
+                    8月28日
+                </td>
+                <td class="on_click ">
+                    8月29日
+                </td>
+                <td class="on_click">
+                    8月30日
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!--<h5 id="nian">12</h5>
+    <h5 id="yue">12</h5>-->
+    <script>
+
+
+
+        /////找到绑定事件源
+        var all = document.getElementById("j_cbAll"),
+            tbody = document.getElementById("j_tb"),
+            checkboxs = tbody.getElementsByTagName("input"),
+            on__click = tbody.querySelectorAll(".on_click");
+
+        var check_counts = 0;
+        for (var i = 0; i < on__click.length; i++) {///28个格子 4*7
+            on__click[i].onclick = function () {
+                this.classList.toggle("select");///为td元素切换类 、添加一个类
+                var p_tr = this.parentNode.children;
+                if (p_tr.length > 0) {
+                    var hasTrue = true;
+                    for (var index = 1; index < p_tr.length; index++) {
+
+                        var element = p_tr[index];
+                        if (!element.classList.contains("select")) {////查看元素中是否有包含的"select"类名
+
+                            hasTrue = false;
+                        }////反选模块
+                       
+                    }
+                    var c = this.parentNode.children[0];////就是那个第一个td标签，
+                    hasTrue ? c.classList.add("select") : c.classList.remove("select");
+                    /////？添加这个类名-----------删除这个类名
+                    c.children[0].checked = hasTrue;
+                }
+            };
+        }
+        //////设置全选模块
+        all.onclick = function () {
+            for (var i = 0; i < checkboxs.length; i++) {
+                var checkbox = checkboxs[i];
+                checkbox.checked = !checkbox.checked;/////取相反的数据
+                var p_tr = checkbox.parentNode.parentNode.children;////所有的tr
+                for (var index = 0; index < p_tr.length; index++) {
+                    var element = p_tr[index];
+                    element.classList.toggle("select"); ////如果classList中存在给定的值，删除它，否则，添加它；
+                }
+            }
+        };
+        for (var i = 0; i < checkboxs.length; i++) {
+            checkboxs[i].onclick = function () {
+                var isCheckedAll = true;
+
+                var p_tr = this.parentNode.parentNode.children;///////所有tr
+
+                for (var index = 0; index < p_tr.length; index++) {
+                    var element = p_tr[index];
+                    element.classList.toggle("select");
+                }
+
+                for (var i = 0; i < checkboxs.length; i++) {
+                    if (!checkboxs[i].checked) {
+                        isCheckedAll = false;
+                        break;
+                    }
+                }
+                all.checked = isCheckedAll;
+            };
+        }
+
+
+
+        //////////////////////////
+
+        //var dat = new Date(); //当前时间
+        //var nianD = dat.getFullYear();//当前年份
+        //var yueD = dat.getMonth(); //当前月
+        //var tianD = dat.getDate(); //当前天 这保存的年月日 是为了 当到达当前日期 有对比
+
+        //add(); 
+
+        //function add() {
+        //    document.getElementById('j_tb').innerHTML = "";
+
+        //    var nian = dat.getFullYear();//当前年份
+        //    var yue = dat.getMonth(); //当前月
+        //    var tian = dat.getDate(); //当前天
+        //    var arr = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"];
+        //    document.getElementById('nian').innerText = nian;
+        //    document.getElementById('yue').innerText = arr[yueD];
+
+        //    var setDat = new Date(nian, yue + 1, 1 - 1); //把时间设为下个月的1号 然后天数减去1 就可以得到 当前月的最后一天;
+        //    var setTian = setDat.getDate(); //获取 当前月最后一天
+        //    var setZhou = new Date(nian, yue, 1).getDay(); //获取当前月第一天 是 周几
+
+        //    for (var i = 0; i < setZhou; i++) {//渲染空白 与 星期 对应上
+        //        var td = document.createElement('td');
+        //        document.getElementById('date').appendChild(td);
+        //    }
+
+        //    for (var i = 1; i <= setTian; i++) {//利用获取到的当月最后一天 把 前边的 天数 都循环 出来
+        //        var td = document.createElement('td');
+        //        td.innerText = i;
+        //        if (nian == nianD && yue == yueD && i == tianD) {
+        //            td.className = "active";
+        //        } else {
+        //            td.className = "hover";
+        //        }
+
+        //        document.getElementById('date').appendChild(td);
+        //    }
+
+        //}
+
+    </script>
+    <div class="consumption">
+        <label>
+
+            <a href="" class="credit" title="点击了解">
+                <span class=""></span> 帮帮币
+            </a>
+            花费
+        </label>
+        <label>每天需要： </label><span >4</span> 枚
+        <label>一共需要 ：</label><span class="need">0</span> 枚
+        <label>剩余 ：</label><span class="residue">0</span> 枚
+    </div>
+
+
+
+
+
+
+</body>
+</html>

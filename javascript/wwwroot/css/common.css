@@ -1,4 +1,9 @@
-﻿.datepicker {
+﻿.select {
+    background: #87CEFA;
+}
+
+
+.datepicker {
     padding: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;

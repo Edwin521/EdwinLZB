@@ -88,10 +88,10 @@
              height:100px;
              background-color:pink;
          }*/
-          /*
+          /**/
 
-         密码框验证消息*/
-        /*  div {
+         密码框验证消息
+          div {
               width: 600px;
               margin: 100px auto;
           }
@@ -110,8 +110,8 @@
           .right{
               color:green;
               background-image:url(img/right.png);
-          }*/
-          /*密码框验证*/
+          }
+      
          
     </style>
 </head>
@@ -121,10 +121,10 @@
   
 
     <!--//////用户注册页面密码框验证-->
-    <!--<div class="register">
+    <div class="register">
         <input type='password' class='wan' />
         <p class='message'>请输入6~16位密码</p>
-    </div>-->
+    </div>
     <!--//////密码框验证-->
     <!--///////-->
     <!--<div>文本</div>-->
@@ -174,18 +174,18 @@
     <script>
      
         
-        ////密码框验证消息///
-        //var wan = document.querySelector('.wan');
-        //var message = document.querySelector('.message');
-        //wan.onblur = function () {
-        //    if (this.value.length < 6 || this.value.length > 16) {
-        //        message.className = 'message wrong';
-        //        message.innerHTML = '您输入的位数不对要求6~16位';
-        //    } else {
-        //        message.className = 'message right';
-        //        message.innerHTML = '您输入的正确';
-        //    }
-        //}
+        //密码框验证消息///
+        var wan = document.querySelector('.wan');
+        var message = document.querySelector('.message');
+        wan.onblur = function () {
+            if (this.value.length < 6 || this.value.length > 16) {
+                message.className = 'message wrong';
+                message.innerHTML = '您输入的位数不对要求6~16位';
+            } else {
+                message.className = 'message right';
+                message.innerHTML = '您输入的正确';
+            }
+        }
             ////密码框验证消息
 
 

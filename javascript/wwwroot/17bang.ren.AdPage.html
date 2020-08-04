@@ -2,16 +2,12 @@
 <html lang="en">
 <head>
     <link href="css/common.css" rel="stylesheet" />
+    <script src="lib/jquery/dist/jquery.js"></script>
 
     <style>
-        /*
-        .select {
-            background: #87CEFA;
 
-        }*/
-        .consumption {
-            float: right;
-            margin-right: 60px;
+        .bgBlue {
+            background-color: deepskyblue;
         }
     </style>
 </head>
@@ -41,11 +37,11 @@
     </div>
 
 
-    <table class="table ad-in-widget-date">
+    <table id="table" class="table ad-in-widget-date">
         <thead>
             <tr>
                 <th>
-                    <input type="checkbox" id="j_cbAll">
+                    <input type="checkbox" id="quanBu">
                 </th>
                 <th>一</th>
                 <th>二</th>
@@ -56,217 +52,208 @@
                 <th>天</th>
             </tr>
         </thead>
-        <tbody id="j_tb">
+        <tbody id="tb">
 
             <tr>
                 <td><input type="checkbox" name="cb"></td>
-                <td class="on_click">
+                <td class="xuan">
                     8月3日
                 </td>
-                <td class="on_click">
+                <td class="xuan">
                     8月4日
                 </td>
-                <td class="on_click">
+                <td class="xuan">
                     8月5日
                 </td>
-                <td class=" on_click">
+                <td class=" xuan">
                     8月6日
                 </td>
-                <td class="on_click ">
+                <td class="xuan ">
                     8月7日
                 </td>
-                <td class="on_click ">
+                <td class="xuan ">
                     8月8日
                 </td>
-                <td class=" on_click">
+                <td class=" xuan">
                     8月9日
                 </td>
             </tr>
             <tr>
                 <td><input type="checkbox" name="cb"></td>
-                <td class="on_click ">
+                <td class="xuan ">
                     8月10日
                 </td>
-                <td class="on_click">
+                <td class="xuan">
                     8月11日
                 </td>
-                <td class="on_click">
+                <td class="xuan">
                     8月12日
                 </td>
-                <td class="on_click ">
+                <td class="xuan ">
                     8月13日
                 </td>
-                <td class="on_click ">
+                <td class="xuan ">
                     8月14日
                 </td>
-                <td class=" on_click">
+                <td class=" xuan">
                     8月15日
                 </td>
-                <td class="on_click ">
+                <td class="xuan ">
                     8月16日
                 </td>
             </tr>
             <tr>
                 <td><input type="checkbox" name="cb"></td>
-                <td class="on_click ">
+                <td class="xuan ">
                     8月17日
                 </td>
-                <td class="on_click ">
+                <td class="xuan ">
                     8月18日
                 </td>
-                <td class="on_click">
+                <td class="xuan">
                     8月19日
                 </td>
-                <td class="on_click">
+                <td class="xuan">
                     8月20日
                 </td>
-                <td class="on_click">
+                <td class="xuan">
                     8月21日
                 </td>
-                <td class="on_click">
+                <td class="xuan">
                     8月22日
                 </td>
-                <td class="on_click">
+                <td class="xuan">
                     8月23日
                 </td>
             </tr>
             <tr>
                 <td><input type="checkbox" name="cb"></td>
-                <td class="on_click ">
+                <td class="xuan ">
                     8月24日
                 </td>
-                <td class=" on_click">
+                <td class=" xuan">
                     8月25日
                 </td>
-                <td class=" on_click">
+                <td class=" xuan">
                     8月26日
                 </td>
-                <td class="on_click ">
+                <td class="xuan ">
                     8月27日
                 </td>
-                <td class="on_click ">
+                <td class="xuan ">
                     8月28日
                 </td>
-                <td class="on_click ">
+                <td class="xuan ">
                     8月29日
                 </td>
-                <td class="on_click">
+                <td class="xuan">
                     8月30日
                 </td>
             </tr>
         </tbody>
     </table>
-    <!--<h5 id="nian">12</h5>
-    <h5 id="yue">12</h5>-->
+
     <script>
+       
+            $('#table tb').each(function () {
+
+                $('#table tb').click(function () {
+                    //设置点击td的颜色
+                    $(this).toggleclass("bgblue");
+                   
+                });
+               
 
 
+            });
 
-        /////找到绑定事件源
-        var all = document.getElementById("j_cbAll"),
-            tbody = document.getElementById("j_tb"),
-            checkboxs = tbody.getElementsByTagName("input"),
-            on__click = tbody.querySelectorAll(".on_click");
 
-        var check_counts = 0;
-        for (var i = 0; i < on__click.length; i++) {///28个格子 4*7
-            on__click[i].onclick = function () {
-                this.classList.toggle("select");///为td元素切换类 、添加一个类
-                var p_tr = this.parentNode.children;
-                if (p_tr.length > 0) {
-                    var hasTrue = true;
-                    for (var index = 1; index < p_tr.length; index++) {
-
-                        var element = p_tr[index];
-                        if (!element.classList.contains("select")) {////查看元素中是否有包含的"select"类名
-
-                            hasTrue = false;
-                        }////反选模块
-                       
-                    }
-                    var c = this.parentNode.children[0];////就是那个第一个td标签，
-                    hasTrue ? c.classList.add("select") : c.classList.remove("select");
-                    /////？添加这个类名-----------删除这个类名
-                    c.children[0].checked = hasTrue;
+            $("#quanBu").click(function () {
+                if ($('#quanBu').attr('checked')) {
+                    $("[name='cb']").prop("checked", 'true');//全选
+                    $("[name='cb']").each(function () {
+                        $(this).parent().parent().toggleClass("bgBlue");//添加选中样式
+                    });
+                } else {
+                    $("[name='cb']").removeAttr("checked");//取消全选
+                    $("[name='cb']").each(function () {
+                        $(this).parent().parent().toggleClass("bgBlue");//取消选中样式
+                    });
                 }
-            };
-        }
-        //////设置全选模块
-        all.onclick = function () {
-            for (var i = 0; i < checkboxs.length; i++) {
-                var checkbox = checkboxs[i];
-                checkbox.checked = !checkbox.checked;/////取相反的数据
-                var p_tr = checkbox.parentNode.parentNode.children;////所有的tr
-                for (var index = 0; index < p_tr.length; index++) {
-                    var element = p_tr[index];
-                    element.classList.toggle("select"); ////如果classList中存在给定的值，删除它，否则，添加它；
-                }
-            }
-        };
-        for (var i = 0; i < checkboxs.length; i++) {
-            checkboxs[i].onclick = function () {
-                var isCheckedAll = true;
+            });
 
-                var p_tr = this.parentNode.parentNode.children;///////所有tr
 
-                for (var index = 0; index < p_tr.length; index++) {
-                    var element = p_tr[index];
-                    element.classList.toggle("select");
-                }
+            ////需求１：上面的多选框选中，下面的多选框跟着选中，上面的多选框没有选中，下面的多选框跟着不选中
+            ////需求２：下面的多选框都有单击事件
+            ////如果下面的多选框们都选中了，那么上面的那个多选框跟着选中，如果下面多选框有一个没有选中，那么上面的多选框也就不选中
 
-                for (var i = 0; i < checkboxs.length; i++) {
-                    if (!checkboxs[i].checked) {
-                        isCheckedAll = false;
-                        break;
-                    }
-                }
-                all.checked = isCheckedAll;
-            };
-        }
+            ////需求１
+            //$('#quanBu').click(function () {
+            //    //获取这个多选框的checked值
+            //    var checkedValue = $(this).prop('checked');
+            //    //让下面的多选框的checked值跟随这个checkedValue
+            //    $('#tb input').prop('checked', checkedValue);
+            //});
+            ////需求２
+            //$('#tb input').click(function () {
+            //    //判断下面的那四个多选框是否都被选中了
+            //    var numOfAll = $('#tb input').length;//获取到下面的所有的多选框的个数
+            //    var numOfSelect = $('.xuan input:checked').length; //获取到下面被选中的多选框的个数
+            //    console.log(numOfSelect);
+            //    //判断
+            //    // if(numOfAll == numOfSelect){
+            //    //     //全部被选中
+            //    //     $('#quanBu').prop('checked',true);
+            //    // }else{
+            //    //     $('#quanBu').prop('checked',false);
+            //    // }
+            //    //上面的判断优化
+            //    $('#quanBu').prop('checked', numOfAll == numOfSelect);
+            //});
 
 
 
-        //////////////////////////
+                //////////////////////////
 
-        //var dat = new Date(); //当前时间
-        //var nianD = dat.getFullYear();//当前年份
-        //var yueD = dat.getMonth(); //当前月
-        //var tianD = dat.getDate(); //当前天 这保存的年月日 是为了 当到达当前日期 有对比
+                //var dat = new Date(); //当前时间
+                //var nianD = dat.getFullYear();//当前年份
+                //var yueD = dat.getMonth(); //当前月
+                //var tianD = dat.getDate(); //当前天 这保存的年月日 是为了 当到达当前日期 有对比
 
-        //add(); 
+                //add();
 
-        //function add() {
-        //    document.getElementById('j_tb').innerHTML = "";
+                //function add() {
+                //    document.getElementById('tb').innerHTML = "";
 
-        //    var nian = dat.getFullYear();//当前年份
-        //    var yue = dat.getMonth(); //当前月
-        //    var tian = dat.getDate(); //当前天
-        //    var arr = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"];
-        //    document.getElementById('nian').innerText = nian;
-        //    document.getElementById('yue').innerText = arr[yueD];
+                //    var nian = dat.getFullYear();//当前年份
+                //    var yue = dat.getMonth(); //当前月
+                //    var tian = dat.getDate(); //当前天
+                //    var arr = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"];
+                //    document.getElementById('nian').innerText = nian;
+                //    document.getElementById('yue').innerText = arr[yueD];
 
-        //    var setDat = new Date(nian, yue + 1, 1 - 1); //把时间设为下个月的1号 然后天数减去1 就可以得到 当前月的最后一天;
-        //    var setTian = setDat.getDate(); //获取 当前月最后一天
-        //    var setZhou = new Date(nian, yue, 1).getDay(); //获取当前月第一天 是 周几
+                //    var setDat = new Date(nian, yue + 1, 1 - 1); //把时间设为下个月的1号 然后天数减去1 就可以得到 当前月的最后一天;
+                //    var setTian = setDat.getDate(); //获取 当前月最后一天
+                //    var setZhou = new Date(nian, yue, 1).getDay(); //获取当前月第一天 是 周几
 
-        //    for (var i = 0; i < setZhou; i++) {//渲染空白 与 星期 对应上
-        //        var td = document.createElement('td');
-        //        document.getElementById('date').appendChild(td);
-        //    }
+                //    for (var i = 0; i < setZhou; i++) {//渲染空白 与 星期 对应上
+                //        var td = document.createElement('td');
+                //        document.getElementById('date').appendChild(td);
+                //    }
 
-        //    for (var i = 1; i <= setTian; i++) {//利用获取到的当月最后一天 把 前边的 天数 都循环 出来
-        //        var td = document.createElement('td');
-        //        td.innerText = i;
-        //        if (nian == nianD && yue == yueD && i == tianD) {
-        //            td.className = "active";
-        //        } else {
-        //            td.className = "hover";
-        //        }
+                //    for (var i = 1; i <= setTian; i++) {//利用获取到的当月最后一天 把 前边的 天数 都循环 出来
+                //        var td = document.createElement('td');
+                //        td.innerText = i;
+                //        if (nian == nianD && yue == yueD && i == tianD) {
+                //            td.className = "active";
+                //        } else {
+                //            td.className = "hover";
+                //        }
 
-        //        document.getElementById('date').appendChild(td);
-        //    }
+                //        document.getElementById('date').appendChild(td);
+                //    }
 
-        //}
+                //}
 
     </script>
     <div class="consumption">
@@ -277,7 +264,7 @@
             </a>
             花费
         </label>
-        <label>每天需要： </label><span >4</span> 枚
+        <label>每天需要： </label><span>4</span> 枚
         <label>一共需要 ：</label><span class="need">0</span> 枚
         <label>剩余 ：</label><span class="residue">0</span> 枚
     </div>

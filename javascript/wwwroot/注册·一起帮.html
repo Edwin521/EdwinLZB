@@ -3,196 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <title>注册·一起帮</title>
-    <link rel="shortcut icon" href="logo-big.ico" />
-    <style>
-
-        /*版心*/
 
 
-        /*顶部导航栏*/
-        .appbar {
-            min-height: 50px;
-            margin-bottom: 20px;
-            border: 1px solid transparent;
-            border-radius: 4px;
-        }
-
-        .appbar-default {
-            background-color: #f8f8f8;
-            border-color: #e7e7e7;
-            background-image: linear-gradient(to bottom,#fff 0,#f8f8f8 100%);
-            background-repeat: repeat-x;
-            box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 5px rgba(0,0,0,.075);
-            box-sizing: border-box;
-        }
-
-        .appbar-fixed-top {
-            top: 0;
-            border-width: 0 0 1px;
-            position: fixed;
-            right: 0;
-            left: 0;
-            z-index: 1030;
-        }
-
-        a {
-            color: #337ab7;
-            text-decoration: none;
-            background-color: transparent;
-        }
-
-        .float-left {
-            float: left !important;
-        }
-
-        img {
-            border: 0;
-        }
-
-        .visible-lg-inline {
-            display: inline !important;
-        }
-
-        .appbar-text {
-            margin-right: 15px;
-            margin-bottom: 15px;
-            margin-top: 15px;
-        }
-
-        .appbar-default .appbar-text {
-            color: #777;
-        }
-
-        .fa {
-            display: inline-block;
-            font: normal normal normal 14px/1 FontAwesome;
-            text-rendering: auto;
-            font-size: inherit;
-            text-rendering: auto;
-        }
-
-        .app {
-            list-style: none;
-        }
-
-        .appbar-app > li > .dropdown-menu {
-            margin-top: 0;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-        }
-
-        .navbar-right.dropdown-menu {
-            right: 0;
-            left: auto;
-        }
-
-        .open > .dropdown-menu {
-            display: block;
-        }
-
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            z-index: 1000;
-            float: left;
-            min-width: 160px;
-            padding: 5px 0;
-            margin: 2px 0 0;
-            font-size: 14px;
-            text-align: left;
-            list-style: none;
-            background-color: #fff;
-            background-clip: padding-box;
-            border: 1px solid rgba(0,0,0,.15);
-            border-radius: 4px;
-            box-shadow: 0 6px 12px rgba(0,0,0,.175);
-        }
-
-        .appbar-app > li {
-            float: left;
-        }
-
-        .app > li {
-            position: relative;
-            display: block;
-        }
-    </style>
 </head>
 <body>
-    <!--///////导航栏布局制作，分左右两个部分-->
-    <!--/////左边部分、、、、-->
-    <div class="appbar appbar-default appbar-fixed-top">
-        <div class="container">
-            <a href=""><img class="float-left" src="images/Snipaste_2020-08-01_17-11-54.png" alt="一起帮logo" /></a>
-            <p class="appbar-text float-left">
-                <span style="font-size:18px;font-weight:600">一起帮</span>
-
-                <span class="visible-md-inline visible-lg-inline">·网络互助平台</span>
-            </p>
-            <a href="#" class="appbar-text float-left" style="font-size:18px;margin-left:10px;" f>
-                <!--<span class="">留下做铃铛闪烁</span>-->
-
-            </a>
-            <!--///////右边部分-->
-            <div class="appbar-collapse collapse"> 
-
-                <ul class=" app appbar-app appbar-right">
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" href=""
-                           data-toggle="dropdown" aria-expanded="false">
-                            <span class="fa fa-question-circle">
-                            </span>
-                            求助
-                        </a>
-
-                        <ul class="dropdown-menu" role="menu">
-                            <li class="dropdown-menu" role="menu">督导班</li>
-                            <li><a href="#"><span class="fa fa-eye"></span>督导班</a></li>
-                            <li><a href=""><span class="fa fa-list"></span> 列表</a> </li>
-                            <li><a href=""><span class="fa fa-edit"></span> 疑问发布</a> </li>
-                            <li><a href=""><span class="fa fa-list"></span> 疑问列表</a> </li>
-                            <li class="divider"></li>
-                            <li><a href=""><span class="fa fa-list"></span> 列表</a> </li>
-                            <li><a href=""><span class="fa fa-edit"></span> 发布</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span zyf-ducu-notices class="fa fa-eye"></span> 督促</a>
-                        <ul class="dropdown-menu" role="menu" zyf-navigator-ducu>
-                            <li><a href=""><span class="fa fa-edit fa-fw"></span> 求督促</a></li>
-                            <li><a href=""><span class="fa fa-gavel fa-fw"></span> 督促别人</a></li>
-                            <li><a href=""><span class="fa fa-list fa-fw"></span> 我的目标</a></li>
-                            <li><a href=""><span class="fa fa-list fa-fw"></span> 我的督促</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="iconfont icon-articles"></span> 文章</a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href=""><span class="fa fa-list fa-fw"></span> 列表</a> </li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown">
-                        <a zyf-navigator-loginstatus class="text-primary dropdown-toggle" data-toggle="dropdown" href="#" role="button">
-                            <span class="text-muted"><span class="fa fa-user-secret"></span><span> 未登录</span></span>
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-
-                            <li><a href=""><span class="fa fa-sign-in"></span> 登录</a></li>
-                            <li><a href=""><span class="fa fa-registered"></span> 注册</a></li>
-                            <li><a href=""><span class="fa fa-lock"></span> 忘记密码</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!--//////开始页面主内容-->
-
 
 
 
@@ -202,38 +16,66 @@
             <a href="#">为什么需要邀请</a>
         </span>
         <h3>邀请人：（*必填，<a href="#">没有邀请人</a>）</h3>
-        <input type="text" name="name" value="他的用户名，模糊查询只能从头开始" />
+        <input type="text" name="name" placeholder="他的用户名，模糊查询只能从头开始" />
         <h3>邀请码：（*必填）</h3>
-        <input type="text" name="name" value="4位数字" />
+        <input type="text" name="name" placeholder="4位数字" />
     </div>
     <h3>用户名：（*必填）</h3>
-    <input type="text" name="name" value="登录用户名，可修改，不能重复" />
-    <h3>密码：（*必填）</h3>
-    <input type="password" name="name" value="不少于4个字符" />
-    <h3>验证密码（*必填）</h3>
-    <input type="password" name="name" value="和密码相同" />
-    <h3>验证码：（*必填）</h3>
+    <input type="text" name="name" placeholder="登录用户名，可修改，不能重复" />
 
-    <p>  <input type="text" value="" /> 点击输入框显示</p><br />
+    <h3>密码：（*必填）</h3>
+    <input type="password" class="pwd" placeholder="不少于4个字符" />
+    <p class="message"></p>
+
+    <h3>验证密码（*必填）</h3>
+    <input type="password" class="pwd2" placeholder="和密码相同" />
+    <p class="message2"></p>
+    
+    <h3>验证码：（*必填）</h3>
+    <p>  <input type="text" placeholder="" /> 点击输入框显示</p><br />
     <button>提交</button>
     <button>重置</button>
     <span><a href="#">登录</a></span>
 
-    <!--<script>
+    <script>
 
-        var nav = document.querySelector('.nav');
-        var lis = nav.children;
+        //注册页面，密码验证，验证两次秘码输入是否一致
 
-        for (var i = 0; i < lis.length; i++) {
-            lis[i].onmouseover = function () {
-                this.children[1].style.display = 'block';
+        var pwd = document.querySelector('.pwd'),
+            div = document.querySelector('.message'),
+            pwd2 = document.querySelector('.pwd2'),
+            div2 = document.querySelector('.message2');
+        
+        pwd.onblur = function () {
+            if (this.value.length < 4 || this.value.length > 20) {
+             
+                div.innerHTML = '密码长度不能小于4，大于20';
+            } else {
+           
+                div.innerHTML = '';
             }
-
-            lis[i].onmouseout = function () {
-                this.children[1].style.display = 'none';
-            }
-
+            
         }
-    </script>-->
+        pwd2.onblur = function () {
+            if (this.value.length < 4 || this.value.length > 20) {
+
+                div2.innerHTML = '密码长度不能小于4，大于20';
+            } else {
+
+                div2.innerHTML = '';
+
+            }
+            if (pwd.value !== pwd2.value) {
+                div2.innerHTML = '*确认密码和密码不一致';
+            } else {
+                div2.innerHTML = '';
+            }
+        }
+     
+
+
+
+
+    </script>
 </body>
 </html>

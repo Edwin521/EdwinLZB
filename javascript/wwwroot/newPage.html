@@ -3,62 +3,6 @@
 <body>
   
 
-        <div class="form-group">
-
-            <label class="col-sm-2 control-label font">密码</label>
-
-
-            <div class="col-xs-10">
-
-                <input type="password" class="form-control bt" name="pwd" id="pwd" placeholder="请设置登录密码">
-
-            </div>
-
-        </div><br /><br /><br />
-
-
-
-        <div class="form-group">
-
-            <label class="col-sm-2 control-label font">确认密码</label>
-
-            <div class="col-xs-10">
-
-                <input type="password" class="form-control bt" name="pwd" id="pwd1" placeholder="请再次填写密码" onkeyup="validate()"><span id="tishi"></span>
-
-            </div>
-
-        </div><br /><br />
-
    
-    <script>
-        function validate() {
-
-            var pwd1 = document.getElementById("pwd").value;
-
-            var pwd2 = document.getElementById("pwd1").value;
-
- 
-
-< !--对比两次输入的密码 -->
-
-    if (pwd1 == pwd2) {
-
-                document.getElementById("tishi").innerHTML = "<font color='green'>两次密码相同</font>";
-
-                document.getElementById("button").disabled = false;
-
-            }
-
-            else {
-
-                document.getElementById("tishi").innerHTML = "<font color='red'>两次密码不相同</font>";
-
-                document.getElementById("button").disabled = true;
-
-            }
-
-        }
-    </script>
 </body>
 </html>

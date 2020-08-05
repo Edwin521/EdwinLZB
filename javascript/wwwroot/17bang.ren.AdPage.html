@@ -19,11 +19,11 @@
         <label>选择广告位：（* 必选）</label>
         <select name="position" id="position" data-val="true" class="form-control" data-val-required="* 广告位不能为空" lzb-ad-in-widget-position="">
             <option value="">-------------</option>
-            <option value="1">---第 1 位---</option>
-            <option value="2">---第 2 位---</option>
-            <option value="3">---第 3 位---</option>
-            <option value="4">---第 4 位---</option>
-            <option value="5">---第 5 位---</option>
+            <option value="1" id="first">---第 1 位---</option>
+            <option value="2" id="second">---第 2 位---</option>
+            <option value="3" id="third">---第 3 位---</option>
+            <option value="4" id="fourth">---第 4 位---</option>
+            <option value="5" id="fifth">---第 5 位---</option>
         </select>
         <span class="field-validation-valid" data-valmsg-for="position" data-valmsg-replace="true"></span>
     </div>
@@ -37,7 +37,7 @@
     </div>
 
 
-    <table id="table" class="table ad-in-widget-date">
+    <table id="table" class="table ad-in-widget-date" style="display:none">
         <thead>
             <tr>
                 <th>
@@ -152,21 +152,22 @@
             </tr>
         </tbody>
     </table>
-
+    <!--<span style="display:none" js-count="0"></span>-->
     <script>
-       
-            $('#table tb').each(function () {
 
-                $('#table tb').click(function () {
-                    //设置点击td的颜色
-                    $(this).toggleclass("bgblue");
-                   
-                });
-               
-
-
+        $(document).ready(function () {
+            $('.xuan').click(function () {
+                $(this).toggleClass("bgBlue");
             });
 
+            //$("#table td").each(function () {
+
+            //    $("#table td").click(function () {
+            //        //设置点击td的颜色
+            //        $(this).toggleClass("bgblue");
+
+            //    });
+            //});
 
             $("#quanBu").click(function () {
                 if ($('#quanBu').attr('checked')) {
@@ -182,78 +183,129 @@
                 }
             });
 
+        })
 
-            ////需求１：上面的多选框选中，下面的多选框跟着选中，上面的多选框没有选中，下面的多选框跟着不选中
-            ////需求２：下面的多选框都有单击事件
-            ////如果下面的多选框们都选中了，那么上面的那个多选框跟着选中，如果下面多选框有一个没有选中，那么上面的多选框也就不选中
+        var btn = document.getElementById('table'),
+            //show = document.getElementById('position'),
+            first = document.getElementById('first'),
+            second = document.getElementById('second'),
+            third = document.getElementById('third'),
+            fourth = document.getElementById('fourth'),
+            fifth = document.getElementById('fifth');
 
-            ////需求１
-            //$('#quanBu').click(function () {
-            //    //获取这个多选框的checked值
-            //    var checkedValue = $(this).prop('checked');
-            //    //让下面的多选框的checked值跟随这个checkedValue
-            //    $('#tb input').prop('checked', checkedValue);
-            //});
-            ////需求２
-            //$('#tb input').click(function () {
-            //    //判断下面的那四个多选框是否都被选中了
-            //    var numOfAll = $('#tb input').length;//获取到下面的所有的多选框的个数
-            //    var numOfSelect = $('.xuan input:checked').length; //获取到下面被选中的多选框的个数
-            //    console.log(numOfSelect);
-            //    //判断
-            //    // if(numOfAll == numOfSelect){
-            //    //     //全部被选中
-            //    //     $('#quanBu').prop('checked',true);
-            //    // }else{
-            //    //     $('#quanBu').prop('checked',false);
-            //    // }
-            //    //上面的判断优化
-            //    $('#quanBu').prop('checked', numOfAll == numOfSelect);
-            //});
+
+///////最笨的写法了呀
+        first.onclick = function () {
+            if (btn.style.display = 'none') {
+                btn.style.display = '';
+            }
+            /////else nothing
+        }
+        //////重复操作
 
 
 
-                //////////////////////////
 
-                //var dat = new Date(); //当前时间
-                //var nianD = dat.getFullYear();//当前年份
-                //var yueD = dat.getMonth(); //当前月
-                //var tianD = dat.getDate(); //当前天 这保存的年月日 是为了 当到达当前日期 有对比
 
-                //add();
 
-                //function add() {
-                //    document.getElementById('tb').innerHTML = "";
 
-                //    var nian = dat.getFullYear();//当前年份
-                //    var yue = dat.getMonth(); //当前月
-                //    var tian = dat.getDate(); //当前天
-                //    var arr = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"];
-                //    document.getElementById('nian').innerText = nian;
-                //    document.getElementById('yue').innerText = arr[yueD];
 
-                //    var setDat = new Date(nian, yue + 1, 1 - 1); //把时间设为下个月的1号 然后天数减去1 就可以得到 当前月的最后一天;
-                //    var setTian = setDat.getDate(); //获取 当前月最后一天
-                //    var setZhou = new Date(nian, yue, 1).getDay(); //获取当前月第一天 是 周几
 
-                //    for (var i = 0; i < setZhou; i++) {//渲染空白 与 星期 对应上
-                //        var td = document.createElement('td');
-                //        document.getElementById('date').appendChild(td);
-                //    }
+                            //$("[name='cb']").click(function () {
+                            //    if ($("[name='cb']").attr('checked')) {
+                            //        //$(".xuan").prop("checked", 'true');//全选
+                            //        $(".xuan").each(function () {
+                            //            $(this).siblings().toggleClass("bgBlue");//添加选中样式
+                            //        });
+                            //    } else {
+                            //        //$(".xuan").removeAttr("checked");//取消全选
+                            //        $(".xuan").each(function () {
+                            //            $(this).siblings().toggleClass("bgBlue");//取消选中样式
+                            //        });
+                            //    }
+                            //});
 
-                //    for (var i = 1; i <= setTian; i++) {//利用获取到的当月最后一天 把 前边的 天数 都循环 出来
-                //        var td = document.createElement('td');
-                //        td.innerText = i;
-                //        if (nian == nianD && yue == yueD && i == tianD) {
-                //            td.className = "active";
-                //        } else {
-                //            td.className = "hover";
-                //        }
 
-                //        document.getElementById('date').appendChild(td);
-                //    }
 
-                //}
+
+
+
+
+
+
+
+
+                                        ////需求１：上面的多选框选中，下面的多选框跟着选中，上面的多选框没有选中，下面的多选框跟着不选中
+                                        ////需求２：下面的多选框都有单击事件
+                                        ////如果下面的多选框们都选中了，那么上面的那个多选框跟着选中，如果下面多选框有一个没有选中，那么上面的多选框也就不选中
+
+                                        ////需求１
+                                        //$('#quanBu').click(function () {
+                                        //    //获取这个多选框的checked值
+                                        //    var checkedValue = $(this).prop('checked');
+                                        //    //让下面的多选框的checked值跟随这个checkedValue
+                                        //    $('#tb input').prop('checked', checkedValue);
+                                        //});
+                                        ////需求２
+                                        //$('#tb input').click(function () {
+                                        //    //判断下面的那四个多选框是否都被选中了
+                                        //    var numOfAll = $('#tb input').length;//获取到下面的所有的多选框的个数
+                                        //    var numOfSelect = $('.xuan input:checked').length; //获取到下面被选中的多选框的个数
+                                        //    console.log(numOfSelect);
+                                        //    //判断
+                                        //    // if(numOfAll == numOfSelect){
+                                        //    //     //全部被选中
+                                        //    //     $('#quanBu').prop('checked',true);
+                                        //    // }else{
+                                        //    //     $('#quanBu').prop('checked',false);
+                                        //    // }
+                                        //    //上面的判断优化
+                                        //    $('#quanBu').prop('checked', numOfAll == numOfSelect);
+                                        //});
+
+
+
+                                            //////////////////////////
+
+                                            //var dat = new Date(); //当前时间
+                                            //var nianD = dat.getFullYear();//当前年份
+                                            //var yueD = dat.getMonth(); //当前月
+                                            //var tianD = dat.getDate(); //当前天 这保存的年月日 是为了 当到达当前日期 有对比
+
+                                            //add();
+
+                                            //function add() {
+                                            //    document.getElementById('tb').innerHTML = "";
+
+                                            //    var nian = dat.getFullYear();//当前年份
+                                            //    var yue = dat.getMonth(); //当前月
+                                            //    var tian = dat.getDate(); //当前天
+                                            //    var arr = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"];
+                                            //    document.getElementById('nian').innerText = nian;
+                                            //    document.getElementById('yue').innerText = arr[yueD];
+
+                                            //    var setDat = new Date(nian, yue + 1, 1 - 1); //把时间设为下个月的1号 然后天数减去1 就可以得到 当前月的最后一天;
+                                            //    var setTian = setDat.getDate(); //获取 当前月最后一天
+                                            //    var setZhou = new Date(nian, yue, 1).getDay(); //获取当前月第一天 是 周几
+
+                                            //    for (var i = 0; i < setZhou; i++) {//渲染空白 与 星期 对应上
+                                            //        var td = document.createElement('td');
+                                            //        document.getElementById('date').appendChild(td);
+                                            //    }
+
+                                            //    for (var i = 1; i <= setTian; i++) {//利用获取到的当月最后一天 把 前边的 天数 都循环 出来
+                                            //        var td = document.createElement('td');
+                                            //        td.innerText = i;
+                                            //        if (nian == nianD && yue == yueD && i == tianD) {
+                                            //            td.className = "active";
+                                            //        } else {
+                                            //            td.className = "hover";
+                                            //        }
+
+                                            //        document.getElementById('date').appendChild(td);
+                                            //    }
+
+                                            //}
 
     </script>
     <div class="consumption">

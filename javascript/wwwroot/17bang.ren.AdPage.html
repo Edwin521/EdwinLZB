@@ -37,7 +37,7 @@
     </div>
 
 
-    <table id="table" class="table ad-in-widget-date">
+    <table id="table"style="display:none" class="table ad-in-widget-date">
         <thead>
             <tr>
                 <th>
@@ -154,7 +154,7 @@
     </table>
 
 
-    <div class="consumption">
+    <div class="consumption" >
         <label>
 
             <a href="" class="credit" title="点击了解">
@@ -194,7 +194,14 @@
             })
            
 
-
+            ////// 广告位的隐藏和显示
+            $('select[lzb-ad-in-widget-position]').click(function () {
+                if ($(this).val()!=='') {
+                    $('#table').show();
+                } else {
+                    $('#table').hide();
+                }
+            })
 
 
 

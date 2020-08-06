@@ -5,6 +5,7 @@
     <title>注册·一起帮</title>
     <script src="lib/jquery/dist/jquery.js"></script>
 
+
 </head>
 <body>
 
@@ -37,20 +38,25 @@
         <h3>验证码：（*必填）</h3>
         <p>  <input type="text" class="vCode" placeholder="" /> 点击输入框显示</p>
         <p class="vPrompt"></p><br />
-        <button type="submit">提交</button>
+        <button type="submit" id="submit"js-submit>提交</button>
         <button type="reset" onclick="formReset">重置</button>
         <span><a href="#">登录</a></span>
         </form>
 
         <script>
 
+            $(document).ready(function () {
 
+                if ($('input').text().length = 0) {
+                    $('[js-submit]').prop('disable', true);
+                } else {
 
+                }
+                
 
-           ////// 重置按钮 页面内容重置
-            //function formReset() {
-            //    document.getElementById("myForm").reset()
-            //}
+            })
+
+          
 
 
             //////

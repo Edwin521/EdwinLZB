@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <None Include="wwwroot\jsDOM操作.html" />
+    <None Include="wwwroot\打地鼠游戏js.html" />
   </ItemGroup>
 
   <ItemGroup>

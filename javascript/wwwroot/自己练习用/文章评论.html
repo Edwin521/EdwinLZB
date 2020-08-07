@@ -1,0 +1,90 @@
+﻿
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        ul {
+            list-style: none
+        }
+
+
+
+        textarea {
+            width: 450px;
+            height: 160px;
+            outline: none;
+            resize: none;
+            border: 1px solid #000;
+        }
+
+        ul {
+            width: 350px;
+            padding-left: 80px;
+        }
+
+            ul li {
+                line-height: 25px;
+                border-bottom: 1px dashed #cccccc;
+            }
+
+        input {
+            float: right;
+        }
+
+        ul li a {
+            float: right;
+        }
+    </style>
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            // 1.点击发布按钮， 动态创建一个小li，放入文本框的内容和删除按钮， 并且添加到ul 中
+            $("[js-submit]").on("click", function () {
+                var li = $("<li></li>");
+                li.html($("[js-textarea ]").val() + "<a href='javascript:;'> 删除</a>");///创建一个删除按钮
+                if ($("[js-textarea]").val()!=='') {
+                    $("ul").prepend(li);//向前面添加
+                } ///else nothing
+    
+              
+               
+             
+                $("[js-textarea ]").val("");
+            })
+
+            // 点击的删除按钮，可以删除当前的留言li
+            // $("ul a").click(function() {  // 此时的click不能给动态创建的a添加事件
+            //     alert(11);
+            // })
+            // on可以给动态创建的元素绑定事件
+            $("ul").on("click", "a", function () {
+                $(this).parent().slideUp(function () {//可以向上收起
+                    $(this).remove();
+                });
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <from>
+        <textarea name="评论" js-textarea cols="30" rows="10"></textarea><br>
+        <button js-submit type="submit">提交</button><button type="reset" >重置</button><br />
+    </from>
+    <hr />
+    <span>评论</span>
+    <ul></ul>
+
+
+</body>
+
+</html>

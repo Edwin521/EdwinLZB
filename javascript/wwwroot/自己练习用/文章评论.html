@@ -49,7 +49,7 @@
             // 1.点击发布按钮， 动态创建一个小li，放入文本框的内容和删除按钮， 并且添加到ul 中
             $("[js-submit]").on("click", function () {
                 var li = $("<li></li>");
-                li.html($("[js-textarea ]").val() + "<a href='javascript:;'> 删除</a>");///创建一个删除按钮
+                li.html($("[js-textarea ]").val() + "<a js-support href='javascript:;'> 删除</a>" + "<a   href='javascript:;'>支持</a>" + "<a href='javascript:;'>反对</a>");///创建一个删除按钮
                 if ($("[js-textarea]").val()!=='') {
                     $("ul").prepend(li);//向前面添加
                 } ///else nothing
@@ -65,7 +65,7 @@
             //     alert(11);
             // })
             // on可以给动态创建的元素绑定事件
-            $("ul").on("click", "a", function () {
+            $("ul").on("click", "[js-support]", function () {
                 $(this).parent().slideUp(function () {//可以向上收起
                     $(this).remove();
                 });

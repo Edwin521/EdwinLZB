@@ -3,8 +3,94 @@
 <head>
     <meta charset="utf-8" />
     <title>打地鼠游戏</title>
+    <style>
+        table {
+            background-image: url("/images/打地鼠/背景.jpg");
+            width: 300px;
+            position: absolute;
+            left: 50%;
+            top: 10px;
+            transform: translate(-50%, 0);
+        }
+        body {
+            cursor: url("/images/打地鼠/鼠标锤子.png"),auto;
+        }
+        table td{
+            width:100px;
+            height:100px;
+        }
+        img {
+           margin-top:30px;
+          width:200px;
+          height:170px;
+          position:center
+          
+        }
+        div{
+            position:relative;
+        }
+    </style>
 </head>
 <body>
+    <div>
+        <p id="score">总分：1</p>
+    </div>
+    <!--//创建一个三行三列的土堆-->
+    <table>
+        <tr>
+            <td><img src="images/打地鼠/土堆.png" /></td>
+            <td><img src="images/打地鼠/土堆.png" /></td>
+            <td><img src="images/打地鼠/土堆.png" /></td>
+        </tr>
+        <tr>
+            <td><img src="images/打地鼠/土堆.png" /></td>
+            <td><img src="images/打地鼠/土堆.png" /></td>
+            <td><img src="images/打地鼠/土堆.png" /></td>
+        </tr>
+        <tr>
+            <td><img src="images/打地鼠/土堆.png" /></td>
+            <td><img src="images/打地鼠/土堆.png" /></td>
+            <td><img src="images/打地鼠/土堆.png" /></td>
+        </tr>
+    </table>
+    <script>
+        var image = document.getElementsByTagName('img'),///我先获得所有的土坑集合
+            numbers = 0,
+            sum = 0;
 
+
+        setTimeout('show()',Math.random() * 400+ 800);//随时间调用老鼠出来的函数
+        ////获得一个随机的坑，然后把该坑的图片换成老鼠冒出来的图片，并添加鼠标点击事件
+        function show() {
+            numbers = Math.floor(Math.random() * 9);
+            image[numbers].src = "images/打地鼠/萌地鼠.png";
+            image[numbers].style.marginTop = "0px";
+            image[numbers].setAttribute("onclick", "die()");
+            setTimeout("hide()", Math.random() * 400 + 800);
+        }
+
+        ///老鼠跑了 图片换成原来坑的图片 移除点击事件 然后再调用老鼠出来的函数 show
+        function hide() {
+            image[numbers].src = "images/打地鼠/土堆.png";
+            image[numbers].style.marginTop = "31px";
+            image[numbers].removeAttribute("onclick");
+            setTimeout("show()", Math.random() * 400 + 800);
+        }
+        //////老鼠被我们打晕了 移除老鼠身上的点击事件 图片换成老鼠晕了的图片
+
+        function die() {////我设计每击打一次 可以得10分
+            image[numbers].src = "images/打地鼠/晕地鼠.png";
+            sum += 10;
+            document.getElementById('score').innerHTML = '总分：' + sum;
+            image[numbers].removeAttribute("onclick");
+            image[numbers].style.marginTop = "3px";
+        }
+
+        
+           
+
+
+
+    </script>
 </body>
 </html>
